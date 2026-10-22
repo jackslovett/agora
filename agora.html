@@ -1,0 +1,1722 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Random speaking prompts for philosophy students: topics, vocabulary, interview questions and Polymath research questions, with optional PREP and STAR tools.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%232443A8%22/%3E%3Cpath d=%22M6 11h20M6 16h20M6 21h20%22 stroke=%22%23fff%22 stroke-width=%222%22 opacity=%22.55%22/%3E%3Crect x=%224%22 y=%2213%22 width=%2224%22 height=%226%22 rx=%222%22 fill=%22%23E3B347%22/%3E%3C/svg%3E">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Agora Speaking Wheel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Young+Serif&display=swap">
+<style>
+/* Layout: one centred column. The topic reel is the hero; every other tool is an opt-in extra that appears beneath it. */
+:root{
+  --bg:#E7EBE5; --surface:#F7F8F4; --surface-2:#DDE3DA; --ink:#181C26; --muted:#565E6D; --faint:#8A919E; --line:#C5CCC1;
+  --accent:#2443A8; --accent-ink:#FFFFFF; --accent-soft:#D7DEF5;
+  --gold:#A87208; --gold-soft:#F2E3B9; --olive:#56661F;
+  --plum:#74467A; --ph1:var(--accent); --ph2:var(--olive); --ph3:var(--gold); --ph4:var(--accent); --ph5:var(--plum);
+  --font-display:"Young Serif", Georgia, "Times New Roman", serif;
+  --font-body:"Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --row:58px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F131B; --surface:#171D28; --surface-2:#202837; --ink:#E9EBF1; --muted:#9AA3B5; --faint:#6C7487; --line:#2D3547;
+    --accent:#90A6FF; --accent-ink:#0C1120; --accent-soft:#232E55;
+    --gold:#E3B347; --gold-soft:#3A2F13; --olive:#A9BB63; --plum:#C99BD3;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F131B; --surface:#171D28; --surface-2:#202837; --ink:#E9EBF1; --muted:#9AA3B5; --faint:#6C7487; --line:#2D3547;
+  --accent:#90A6FF; --accent-ink:#0C1120; --accent-soft:#232E55;
+  --gold:#E3B347; --gold-soft:#3A2F13; --olive:#A9BB63; --plum:#C99BD3;
+  color-scheme:dark;
+}
+@media (max-width:540px){:root{--row:48px}}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.5}
+.page{max-width:820px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:18px 56px;display:flex;flex-direction:column;gap:22px}
+.label{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1,h2,h3{margin:0;text-wrap:balance;font-weight:400}
+p{margin:0}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.brand h1{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.3rem);line-height:1}
+.brand h1 span{color:var(--accent)}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+
+.btn{font:inherit;font-weight:600;border-radius:10px;padding:.7rem 1.1rem;border:1px solid transparent;cursor:pointer;line-height:1.2;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;transition:background .15s, transform .1s}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible,.chip:focus-visible,a:focus-visible,.reel:focus-visible,textarea:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,.linkbtn:focus-visible,.pill-btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{background:var(--surface-2)}
+.btn.small{padding:.45rem .85rem;font-size:.88rem}
+.btn[disabled]{opacity:.55;cursor:default}
+.btn.pulse{animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--accent-soft)}50%{box-shadow:0 0 0 8px var(--accent-soft)}}
+.count{font-family:var(--font-mono);font-size:.72rem;background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:1px 7px}
+
+/* tabs */
+.tabs{display:flex;gap:4px;background:var(--surface-2);border-radius:14px;padding:4px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{font:inherit;font-weight:600;font-size:.95rem;flex:1 0 auto;border:none;background:transparent;color:var(--muted);border-radius:10px;padding:.6rem .9rem;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px;line-height:1.2;white-space:nowrap}
+.tab .n{font-family:var(--font-mono);font-size:.68rem;font-weight:500;color:var(--faint)}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.tab[aria-selected="true"] .n{color:var(--accent)}
+.tab:focus-visible{outline:3px solid var(--accent);outline-offset:-2px}
+.tab:disabled{cursor:default}
+.core{font-size:1.15rem;max-width:62ch}
+.core .pos{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);letter-spacing:.06em;margin-right:8px;text-transform:uppercase}
+.kv{display:flex;flex-direction:column;gap:2px}
+.kv p{max-width:62ch}
+.fw-tag{font-family:var(--font-mono);font-size:.78rem;font-weight:600;background:var(--surface-2);border-radius:6px;padding:2px 7px}
+.diffbox{display:flex;flex-direction:column;align-items:center;gap:6px}
+.seg-ctl{display:inline-flex;background:var(--surface-2);border-radius:12px;padding:4px;gap:4px;flex-wrap:wrap;justify-content:center}
+.seg-ctl button{font:inherit;font-weight:600;font-size:.9rem;border:none;background:transparent;color:var(--muted);border-radius:9px;padding:.45rem .95rem;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.seg-ctl button:hover{color:var(--ink)}
+.seg-ctl button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.seg-ctl button:focus-visible{outline:3px solid var(--accent);outline-offset:-2px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.diff-pill{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:.2rem .55rem;border-radius:999px;border:1.5px solid var(--c);color:var(--ink)}
+.diff-pill[data-d="e"],.dot.e{--c:var(--olive)}
+.diff-pill[data-d="m"],.dot.m{--c:var(--gold)}
+.diff-pill[data-d="h"],.dot.h{--c:var(--plum)}
+.label-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.guide{border-top:1px solid var(--line);padding-top:14px}
+.guide summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:10px;border-radius:6px}
+.guide summary::-webkit-details-marker{display:none}
+.guide summary::before{content:"+";font-family:var(--font-mono);color:var(--accent);width:1ch}
+.guide[open] summary::before{content:"−"}
+.guide-body{display:flex;flex-direction:column;gap:14px;margin-top:12px}
+.guide-intro{max-width:66ch;color:var(--muted)}
+.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:640px){.guide-grid{grid-template-columns:1fr}}
+.guide-part{background:var(--bg);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0;border-top:3px solid var(--c)}
+.guide-head{display:flex;align-items:center;gap:10px}
+.guide-head .badge{font-family:var(--font-display);font-size:1.15rem;width:1.9rem;height:1.9rem;border-radius:8px;display:grid;place-items:center;background:var(--c);color:var(--surface);flex:none}
+.guide-head b{font-size:1.05rem}
+.guide-tips{margin:0;padding-left:1.1rem;display:grid;gap:3px;font-size:.92rem}
+.starters{font-style:italic}
+.guide-eg p{font-size:.93rem;border-left:2px solid var(--line);padding-left:10px}
+.cue .start{font-size:.9rem;color:var(--ink);opacity:.8}
+/* extras panel */
+.extras{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 18px 14px;display:flex;flex-direction:column;gap:12px}
+.extras-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.extras-head h2{font-family:var(--font-display);font-size:1.35rem}
+.extras-head p{font-size:.88rem;color:var(--muted)}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 18px}
+@media (max-width:600px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:10px 4px;border-top:1px solid var(--line);min-width:0}
+.opt > div{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.opt b{font-size:.95rem;font-weight:600}
+.opt small{font-size:.82rem;color:var(--muted);line-height:1.35}
+.opt select{margin-top:6px;align-self:flex-start}
+.opt.off-dep{opacity:.5}
+.sw{appearance:none;-webkit-appearance:none;flex:none;width:40px;height:23px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);position:relative;cursor:pointer;margin:1px 0 0;transition:background .15s}
+.sw::before{content:"";position:absolute;top:2px;left:2px;width:17px;height:17px;border-radius:50%;background:var(--surface);box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+.sw:checked{background:var(--accent);border-color:var(--accent)}
+.sw:checked::before{transform:translateX(17px)}
+.sw:disabled{cursor:default}
+.linkbtn{font:inherit;font-size:.85rem;background:none;border:none;color:var(--accent);cursor:pointer;padding:4px 6px;border-radius:6px;font-weight:600}
+.linkbtn:hover{background:var(--surface-2)}
+
+/* reel */
+.reel{position:relative;width:100%;height:calc(var(--row) * 7);background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;perspective:700px;cursor:pointer;user-select:none;-webkit-user-select:none}
+.band{position:absolute;left:10px;right:10px;top:50%;height:var(--row);transform:translateY(-50%);border-radius:12px;background:var(--accent-soft)}
+.band::before,.band::after{content:"";position:absolute;top:50%;transform:translateY(-50%);border-top:9px solid transparent;border-bottom:9px solid transparent}
+.band::before{left:10px;border-left:12px solid var(--gold)}
+.band::after{right:10px;border-right:12px solid var(--gold)}
+.rows{position:absolute;inset:0;transform-style:preserve-3d;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 70%,transparent 100%)}
+.row{position:absolute;left:0;right:0;top:50%;height:var(--row);margin-top:calc(var(--row) / -2);display:flex;align-items:center;justify-content:center;padding:0 46px;font-size:1.12rem;color:var(--muted);white-space:nowrap;will-change:transform,opacity}
+.row span{overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.row.center{color:var(--ink);font-weight:600}
+.reel.won .row.center{color:var(--accent);font-family:var(--font-display);font-weight:400;font-size:1.3rem}
+@media (max-width:540px){.row{font-size:.98rem;padding:0 36px}.reel.won .row.center{font-size:1.1rem}}
+.reel-empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);text-align:center;padding:0 24px}
+
+.spin-row{display:flex;flex-direction:column;align-items:center;gap:8px}
+.spin-btn{min-width:min(100%,320px);font-size:1.12rem;padding:.95rem 1.4rem}
+.spin-btn kbd{font-family:var(--font-mono);font-size:.72rem;border:1px solid currentColor;border-radius:5px;padding:1px 6px;opacity:.75}
+.pool-line{font-size:.88rem;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+
+.areas{display:flex;flex-direction:column;gap:8px}
+.row-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:.85rem;font-weight:500;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:.32rem .7rem;cursor:pointer;display:inline-flex;gap:6px;align-items:baseline}
+.chip .n{font-family:var(--font-mono);font-size:.7rem;color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip[aria-pressed="true"] .n{color:var(--bg);opacity:.7}
+select{font:inherit;font-size:.9rem;padding:.4rem .55rem;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+
+/* result + work */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,3.4vw,30px);display:flex;flex-direction:column;gap:16px;position:relative;min-width:0}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.topic-title{font-family:var(--font-display);font-size:clamp(1.8rem,4.4vw,2.6rem);line-height:1.08}
+.cat-chip{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;background:var(--accent-soft);color:var(--ink);padding:.3rem .65rem;border-radius:999px;align-self:flex-start}
+.summary{display:flex;flex-direction:column;gap:10px}
+.blurb{font-size:1.1rem;max-width:62ch}
+.read-more{font-size:.9rem;color:var(--muted)}
+a{color:var(--accent);font-weight:600;text-underline-offset:3px}
+.study-timer{display:flex;align-items:center;gap:8px;background:var(--surface-2);border-radius:999px;padding:4px 4px 4px 14px}
+.study-timer .time{font-family:var(--font-mono);font-size:1.12rem;font-weight:600;font-variant-numeric:tabular-nums;min-width:3.2ch;text-align:right}
+.study-timer.over .time{color:var(--gold)}
+.pill-btn{font:inherit;font-size:.82rem;font-weight:600;border:none;background:var(--surface);color:var(--ink);padding:.35rem .7rem;border-radius:999px;cursor:pointer}
+.pill-btn:hover{background:var(--bg)}
+.pill-btn:disabled{opacity:.5;cursor:default}
+.angle{background:var(--gold-soft);border-radius:12px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.angle > div{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1 1 220px}
+.angle p{font-weight:600;font-size:1.02rem}
+.sub{font-family:var(--font-display);font-size:1.25rem}
+.planner-wrap{display:flex;flex-direction:column;gap:10px}
+.planner{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:600px){.planner{grid-template-columns:1fr}}
+.pfield{display:flex;flex-direction:column;gap:6px;min-width:0}
+.pfield label{display:flex;gap:10px;align-items:center}
+.pfield .badge{font-family:var(--font-display);font-size:1.2rem;width:2rem;height:2rem;border-radius:8px;display:grid;place-items:center;background:var(--c);color:var(--surface);flex:none}
+.pfield .lab{display:flex;flex-direction:column;line-height:1.2;min-width:0}
+.pfield .lab b{font-size:.95rem}
+.pfield .lab span{font-size:.8rem;color:var(--muted)}
+textarea{font:inherit;font-size:.95rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:.6rem .7rem;resize:vertical;min-height:4.2rem;width:100%}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+
+#speakCard{align-items:center;text-align:center}
+.speak-topic{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.15;max-width:36ch}
+.ring-wrap{position:relative;width:min(250px,70vw);aspect-ratio:1;max-width:100%}
+.ring-wrap svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:var(--surface-2);stroke-width:12}
+.ring-fg{fill:none;stroke-width:12;stroke-linecap:round;transition:stroke .3s}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.time-big{font-family:var(--font-mono);font-size:clamp(2.5rem,7vw,3.4rem);font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+.phasebar{display:flex;gap:4px;width:min(100%,520px)}
+.phasebar .seg{flex-grow:var(--g);flex-basis:0;display:flex;flex-direction:column;gap:5px;min-width:0}
+.phasebar .track{height:8px;border-radius:4px;background:var(--surface-2);overflow:hidden}
+.phasebar .fill{height:100%;width:0;background:var(--c)}
+.phasebar .tag{font-family:var(--font-mono);font-size:.68rem;font-weight:600;color:var(--muted);letter-spacing:.05em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phasebar .seg.active .tag{color:var(--ink)}
+.cue{display:flex;gap:16px;align-items:flex-start;text-align:left;width:min(100%,560px);background:var(--bg);border-radius:14px;padding:16px 18px}
+.cue .L{font-family:var(--font-display);font-size:3rem;line-height:.9;color:var(--c);flex:none;width:2.4rem;text-align:center}
+.cue .body{display:flex;flex-direction:column;gap:4px;min-width:0}
+.cue .name{font-weight:700;font-size:1.1rem}
+.cue .note{font-size:.95rem;color:var(--muted);font-style:italic;overflow-wrap:anywhere}
+.countdown{position:absolute;inset:0;background:var(--surface);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;z-index:5}
+.countdown .n{font-family:var(--font-display);font-size:clamp(5rem,16vw,8rem);line-height:1;color:var(--accent)}
+.checklist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.checklist label{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:10px;background:var(--bg);cursor:pointer}
+.checklist input{width:20px;height:20px;margin-top:2px;accent-color:var(--accent);flex:none}
+.score{font-family:var(--font-mono);font-weight:600;font-variant-numeric:tabular-nums}
+
+.bank{border-top:1px solid var(--line);padding-top:16px}
+.bank summary{cursor:pointer;font-family:var(--font-display);font-size:1.35rem;list-style:none;display:flex;align-items:baseline;gap:10px;border-radius:6px}
+.bank summary::-webkit-details-marker{display:none}
+.bank summary::before{content:"+";font-family:var(--font-mono);color:var(--accent);width:1ch}
+.bank[open] summary::before{content:"−"}
+.bank-body{display:flex;flex-direction:column;gap:16px;margin-top:14px}
+.bank-search{max-width:420px;font:inherit;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
+.bank-groups{columns:2 280px;column-gap:28px}
+.bank-group{break-inside:avoid;margin-bottom:20px}
+.bank-group h3{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:6px}
+.bank-group ul{list-style:none;margin:0;padding:0}
+.bank-group button{font:inherit;font-size:.93rem;text-align:left;background:none;border:none;color:var(--ink);padding:4px 6px;margin-left:-6px;border-radius:6px;cursor:pointer;width:100%;display:flex;justify-content:space-between;gap:8px}
+.bank-group button:hover{background:var(--surface-2)}
+.bank-group button .u{font-family:var(--font-mono);font-size:.7rem;color:var(--muted);flex:none}
+.empty{color:var(--muted)}
+
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom, 0px));background:var(--ink);color:var(--bg);padding:.7rem 1.1rem;border-radius:10px;font-size:.92rem;max-width:calc(100% - 32px);z-index:20;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <div class="brand">
+      <h1>Agora<span>.</span></h1>
+      <span class="label">Random speaking prompts</span>
+    </div>
+    <div class="tools">
+      <button class="btn ghost small" id="fsBtn" hidden>Full screen</button>
+      <button class="btn ghost small" id="extrasBtn" aria-expanded="false" aria-controls="extras">Extras <span class="count" id="extrasCount" hidden>0</span></button>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Practice mode" id="tabs"></nav>
+
+  <section class="extras" id="extras" hidden aria-label="Extras">
+    <div class="extras-head">
+      <div><h2>Extras</h2><p>All off by default. Turn on only what your class needs. Settings are remembered on this device.</p></div>
+      <div><button class="linkbtn" id="xAllOff">Turn all off</button><button class="linkbtn" id="xClose">Done</button></div>
+    </div>
+    <div class="opts">
+      <label class="opt"><input type="checkbox" class="sw" data-x="difficulty"><div><b>Difficulty levels</b><small>Choose Easy, Medium or Hard prompts in every tab. Each prompt also shows its level.</small></div></label>
+      <label class="opt"><input type="checkbox" class="sw" data-x="summary"><div><b>Summaries and hints</b><small>Topic explanations, example sentences for words, interview tips, and research starting points, with links to read more.</small></div></label>
+      <label class="opt"><input type="checkbox" class="sw" data-x="angle"><div><b>Angles and challenges</b><small>A random way in, such as "Argue against it", or a speaking challenge for vocabulary words.</small></div></label>
+      <div class="opt"><input type="checkbox" class="sw" data-x="study" id="xStudy" aria-labelledby="xStudyL"><div><b id="xStudyL">Study timer</b><small>Counts down while students read, research and plan. Set separately for each tab.</small>
+        <select id="studySel" aria-label="Study time"><option value="30">30 sec</option><option value="60">1 min</option><option value="120">2 min</option><option value="180">3 min</option><option value="300">5 min</option><option value="600">10 min</option><option value="900">15 min</option></select></div></div>
+      <label class="opt"><input type="checkbox" class="sw" data-x="guide"><div><b>Framework guide</b><small>A full explanation of each part of PREP (or STAR), with tips, sentence starters and a worked example.</small></div></label>
+      <label class="opt"><input type="checkbox" class="sw" data-x="planner"><div><b>Planner</b><small>Four note boxes using PREP, or STAR for behavioural interview questions.</small></div></label>
+      <div class="opt"><input type="checkbox" class="sw" data-x="speak" aria-labelledby="xSpeakL"><div><b id="xSpeakL">Speaking timer with cues</b><small>A timed speech with on-screen PREP or STAR cues. Set separately for each tab.</small>
+        <select id="speakSel" aria-label="Speaking time"><option value="30">30 sec</option><option value="60">1 min</option><option value="90">90 sec</option><option value="120">2 min</option><option value="180">3 min</option></select></div></div>
+      <label class="opt" id="optSelf"><input type="checkbox" class="sw" data-x="selfcheck"><div><b>Self-check</b><small>A tick list shown when the speaking timer ends. Needs the speaking timer.</small></div></label>
+      <label class="opt"><input type="checkbox" class="sw" data-x="areas"><div><b>Choose topic areas</b><small>Limit each tab's list to certain categories, like Ethics or Behavioural questions.</small></div></label>
+      <label class="opt"><input type="checkbox" class="sw" data-x="norepeat"><div><b>Don't repeat topics</b><small>Skip items already drawn on this device until the list runs out.</small></div></label>
+      <label class="opt"><input type="checkbox" class="sw" data-x="bank"><div><b>Topic bank</b><small>A searchable list of everything in the current tab, for picking one directly.</small></div></label>
+      <label class="opt"><input type="checkbox" class="sw" data-x="sound"><div><b>Sounds</b><small>Ticks while the list spins, and chimes for timers.</small></div></label>
+      <label class="opt"><input type="checkbox" class="sw" data-x="fullscreen"><div><b>Full screen button</b><small>Adds a button to the top bar for projecting to the class.</small></div></label>
+    </div>
+  </section>
+
+  <div class="reel" id="reel" tabindex="0" role="button" aria-label="Spin for a random topic">
+    <div class="band" aria-hidden="true"></div>
+    <div class="rows" id="rows" aria-hidden="true"></div>
+    <div class="reel-empty" id="reelEmpty" hidden>No categories selected. Pick at least one below.</div>
+  </div>
+
+  <div class="spin-row">
+    <button class="btn primary spin-btn" id="spinBtn">Spin <kbd>Space</kbd></button>
+    <p class="pool-line" id="poolLine"></p>
+  </div>
+
+  <section class="diffbox" id="diffBox" hidden aria-label="Difficulty">
+    <div class="seg-ctl" id="diffSeg">
+      <button type="button" data-d="all" aria-pressed="true">Mixed</button>
+      <button type="button" data-d="e" aria-pressed="false"><span class="dot e"></span>Easy</button>
+      <button type="button" data-d="m" aria-pressed="false"><span class="dot m"></span>Medium</button>
+      <button type="button" data-d="h" aria-pressed="false"><span class="dot h"></span>Hard</button>
+    </div>
+  </section>
+
+  <section class="areas" id="areasBox" hidden>
+    <div class="row-head"><span class="label">Categories</span><div><button class="linkbtn" id="catAll">All</button><button class="linkbtn" id="catNone">None</button></div></div>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <p class="sr" id="live" aria-live="polite"></p>
+
+  <section class="card" id="resultCard" hidden>
+    <div class="topline">
+      <div class="label-row"><span class="label" id="rLabel">Your topic</span><span class="diff-pill" id="rDiff" hidden></span></div>
+      <div class="study-timer" id="studyTimer" hidden>
+        <span class="label" id="studyLbl">Study</span><span class="time" id="studyTime">2:00</span>
+        <button class="pill-btn" id="studyToggle">Pause</button><button class="pill-btn" id="studyAdd">+30s</button>
+      </div>
+    </div>
+    <h2 class="topic-title" id="rTitle"></h2>
+    <p class="core" id="rCore" hidden></p>
+    <div class="summary" id="xSummary" hidden></div>
+    <div class="angle" id="xAngle" hidden><div><span class="label" id="angleLbl">Your angle</span><p id="angleText"></p></div><button class="btn ghost small" id="angleNew">New angle</button></div>
+    <details class="guide" id="xGuide" open hidden></details>
+    <div class="planner-wrap" id="xPlanner" hidden>
+      <h3 class="sub" id="plannerTitle">Plan with PREP</h3>
+      <div class="planner" id="planner"></div>
+    </div>
+    <div class="actions" id="xSpeakBtn" hidden><button class="btn primary" id="toSpeak">Start speaking</button></div>
+  </section>
+
+  <section class="card" id="speakCard" hidden>
+    <p class="speak-topic" id="kTitle"></p>
+    <div class="ring-wrap">
+      <svg viewBox="0 0 200 200" aria-hidden="true"><circle class="ring-bg" cx="100" cy="100" r="88"/><circle class="ring-fg" id="ringFg" cx="100" cy="100" r="88"/></svg>
+      <div class="ring-center"><span class="time-big" id="timeBig">1:00</span><span class="label" id="phaseLbl">Point</span></div>
+    </div>
+    <div class="phasebar" id="phaseBar"></div>
+    <div class="cue" id="cue"><span class="L" id="cueL">P</span><div class="body"><span class="name" id="cueName">Point</span><span id="cueText"></span><span class="start" id="cueStart"></span><span class="note" id="cueNote"></span></div></div>
+    <div class="actions">
+      <button class="btn ghost" id="speakPause">Pause</button>
+      <button class="btn ghost" id="speakRestart">Restart</button>
+      <button class="btn primary" id="speakFinish">Finish</button>
+    </div>
+    <div class="countdown" id="countdown" hidden><span class="label">Get ready</span><span class="n" id="cdN">3</span></div>
+  </section>
+
+  <section class="card" id="doneCard" hidden>
+    <span class="label">Time's up</span>
+    <h2 class="topic-title" id="dTitle"></h2>
+    <div id="xSelf" hidden style="display:flex;flex-direction:column;gap:12px">
+      <p>Quick self-check. Tick everything you did.</p>
+      <ul class="checklist" id="checklist"></ul>
+      <p class="score" id="score">0 of 7</p>
+    </div>
+    <div class="actions">
+      <button class="btn primary" id="doneSpin">Spin again</button>
+      <button class="btn ghost" id="doneRetry">Speak on this again</button>
+      <button class="btn ghost" id="donePlan">Back to the prompt</button>
+    </div>
+  </section>
+
+  <details class="bank" id="bank" hidden>
+    <summary><span id="bankTitle">Topic bank</span> <span class="label" id="bankCount"></span></summary>
+    <div class="bank-body">
+      <label class="sr" for="bankSearch">Search topics</label>
+      <input class="bank-search" id="bankSearch" type="search" placeholder="Search">
+      <div class="bank-groups" id="bankGroups"></div>
+    </div>
+  </details>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const RAW_TOPICS = `
+ethics|Utilitarianism|Right actions are the ones that produce the greatest overall happiness or wellbeing for everyone affected (Bentham, Mill).
+ethics|Kantian deontology|Morality is about duty: act only on rules you could will everyone to follow, and never treat people merely as tools.
+ethics|Virtue ethics|Ask what a good person would do. Morality is about developing character traits like courage and honesty (Aristotle).
+ethics|The golden mean|Aristotle's idea that each virtue sits between two vices, like courage between cowardice and recklessness.
+ethics|Social contract theory|Moral and political rules are the agreements rational people would accept for mutual benefit (Hobbes, Locke, Rousseau).
+ethics|Moral relativism|Right and wrong depend on culture or individual belief, so there is no single universal moral truth.
+ethics|Moral realism|There are objective moral facts that are true regardless of what anyone thinks or feels.
+ethics|Moral nihilism|The view that nothing is really morally right or wrong at all.
+ethics|Ethical egoism|The claim that people ought to act in their own self-interest, and that this is what morality requires.
+ethics|Psychological egoism|The claim that, as a matter of fact, everything people do is ultimately motivated by self-interest.
+ethics|Divine command theory|An action is right because God commands it, and wrong because God forbids it.
+ethics|The Euthyphro dilemma|From Plato: is something good because the gods command it, or do they command it because it is good?
+ethics|Ethics of care|Morality grounded in relationships, empathy and responsibility for others, rather than abstract rules (Gilligan, Noddings).
+ethics|Natural law theory|Moral principles come from human nature and our purposes, and can be discovered by reason (Aquinas).
+ethics|Effective altruism|Using evidence and careful reasoning to work out how to do the most good with your time and money.
+ethics|The drowning child|Peter Singer: if you'd ruin your shoes to save a drowning child, why not donate to save distant lives?
+ethics|Doctrine of double effect|Causing harm may be allowed if it is a foreseen side effect rather than your intended goal or means.
+ethics|Moral luck|We blame the drunk driver who hits someone more than the one who doesn't, though luck alone separated them (Williams, Nagel).
+ethics|Supererogation|Acts that are good but go beyond duty, like a soldier diving on a grenade. Is anything above and beyond what we owe?
+ethics|The ends justify the means|Is it acceptable to do something wrong in order to achieve a good outcome?
+ethics|Speciesism|Peter Singer's term for giving less moral weight to a being's interests just because of its species.
+ethics|Animal rights|Do animals have rights, and if they do, what follows for farming, zoos and testing?
+ethics|Euthanasia|Is it ever morally acceptable to help a suffering person end their life, and who should decide?
+ethics|The murderer at the door|Kant said you must not lie, even to a murderer asking where your friend is hiding. Was he right?
+ethics|Environmental ethics|Does nature have value in itself, or only because it is useful to humans?
+ethics|Obligations to future generations|What do we owe to people who don't exist yet, especially regarding climate and resources?
+ethics|Just war theory|The conditions under which going to war, and how it is fought, can be morally justified.
+ethics|Capital punishment|Can a state ever be justified in executing someone for a crime?
+ethics|Moral responsibility|When is a person truly blameworthy or praiseworthy for what they do?
+ethics|Forgiveness|Is forgiving always good, and does a wrongdoer need to deserve it or apologise first?
+ethics|Justice vs revenge|What separates justice from revenge, if both aim to make wrongdoers pay?
+ethics|Altruism|Can anyone act purely for the good of others, or is there always something in it for us?
+ethics|Consent|What makes consent genuine, and are there things people cannot consent to?
+ethics|The golden rule|Treat others as you'd want to be treated. A solid moral foundation, or too simple?
+ethics|Genuine moral dilemmas|Can there be situations where every available option is morally wrong?
+ethics|Cultural appropriation|When is borrowing from another culture appreciation, and when does it cause harm?
+ethics|Whistleblowing|Is it right to break loyalty to an employer or group in order to expose wrongdoing?
+ethics|Rights vs the greater good|Can an individual's rights ever be overridden to benefit the majority?
+ethics|Moral intuitions|Should gut feelings about right and wrong count as evidence in ethics?
+ethics|The is-ought problem|Hume: you can't get a conclusion about what ought to be from facts only about what is.
+ethics|Moral progress|Has humanity become morally better over time, and how could we tell?
+schools|Hedonism|The view that pleasure is the only thing valuable for its own sake.
+schools|Stoicism|Focus only on what is in your control, accept the rest calmly, and live by virtue (Epictetus, Marcus Aurelius).
+schools|Epicureanism|The good life is a simple one of modest pleasures, friendship and freedom from fear.
+ethics|Moral status|What gives a being moral status: being human, being alive, feeling pain, or being rational?
+ethics|Sweatshops and consumer choice|Are we morally responsible for how the things we buy were made?
+ethics|Loyalty vs honesty|If a friend did something wrong, should you cover for them or tell the truth?
+ethics|Partiality|Is it fair to care more about your family and friends than about strangers?
+ethics|Paternalism|When, if ever, is it right to limit someone's choices for their own good?
+know|Knowledge as justified true belief|The classic definition from Plato: to know something you must believe it, it must be true, and you must have good reason.
+know|Gettier problems|Cases where someone has a justified true belief that is only true by luck. Is that really knowledge?
+know|Rationalism|Some knowledge comes from reason alone, independent of experience (Descartes, Leibniz).
+know|Empiricism|All knowledge ultimately comes from experience through the senses (Locke, Hume).
+know|Tabula rasa|Locke's idea that the mind starts as a blank slate filled in by experience. Are we born knowing anything?
+know|Descartes' evil demon|How could you know that a powerful deceiver isn't feeding you false experiences of everything?
+know|Cogito ergo sum|Descartes: even if I doubt everything, I can't doubt that I'm thinking, so I must exist.
+know|The problem of induction|Hume: past patterns can't logically guarantee the future, so why trust that the sun will rise tomorrow?
+know|Falsifiability|Karl Popper: a theory is scientific only if some possible observation could prove it wrong.
+know|Paradigm shifts|Thomas Kuhn: science changes through revolutions that replace whole frameworks, not just steady progress.
+know|A priori vs a posteriori|Knowledge you can have before experience (like maths) versus knowledge gained through experience.
+know|Testimony|Most of what you know comes from trusting others. When is that trust justified?
+know|Can we trust our senses?|Optical illusions show our senses can mislead us. Can sensory evidence ever be fully reliable?
+know|Certainty|Is anything absolutely certain, and do we need certainty to have knowledge?
+know|Foundationalism vs coherentism|Is knowledge built on basic, self-evident beliefs, or justified by how all our beliefs fit together?
+know|Occam's razor|When two explanations fit the evidence, prefer the simpler one. Is simpler really more likely to be true?
+know|Intuition|Can a hunch or gut feeling count as knowledge?
+know|Trusting experts|When should you defer to experts, and when should you think for yourself?
+know|Misinformation|How should we decide what to believe when we are flooded with conflicting information?
+know|Conspiracy theories|Why are conspiracy theories appealing, and what makes a belief reasonable or unreasonable?
+know|Faith vs reason|Can faith be a legitimate way of knowing, or must beliefs be backed by evidence?
+know|Knowledge of the future|Can we know anything about what hasn't happened yet, or only make predictions?
+know|Knowing how vs knowing that|Is knowing how to ride a bike the same kind of knowledge as knowing facts?
+know|Indigenous knowledge systems|Many Aboriginal and Torres Strait Islander knowledges are held through Country, story, kinship and law. How do they differ from Western science?
+know|Dadirri|Deep, quiet listening, a concept shared by Ngan'gikurunggurr elder Miriam-Rose Ungunmerr-Baumann. Is listening a way of knowing?
+know|Socratic ignorance|Socrates claimed his wisdom lay in recognising how little he knew.
+know|Intellectual humility|Is admitting you might be wrong a strength or a weakness in argument?
+know|Peer disagreement|If someone just as smart and informed as you disagrees, should you change your mind?
+know|Bayesian reasoning|Updating how confident you are in a belief in proportion to new evidence.
+know|Memory as evidence|Memories can be false or distorted. How much can we rely on them as knowledge?
+know|Can you choose what you believe?|Could you decide to believe the sky is green? If not, are we responsible for our beliefs?
+know|Science as knowledge|Is science the best or only reliable way to know about the world?
+know|Ethics of belief|W.K. Clifford: it is always wrong to believe anything on insufficient evidence. Too strict?
+know|Wisdom vs knowledge|What is the difference between knowing a lot and being wise?
+know|Common sense|Should common sense count as evidence, or is it often just prejudice?
+meta|Free will vs determinism|If every event is caused by earlier events, can our choices really be free?
+meta|Compatibilism|Free will and determinism can both be true if being free means acting on your own desires without force.
+meta|Hard determinism|Everything is caused, so free will is an illusion and nobody truly deserves blame or praise.
+meta|Libertarian free will|We have genuine choices that aren't fully determined by prior causes.
+meta|Frankfurt cases|Thought experiments where someone couldn't have done otherwise but still seems responsible for what they did.
+meta|Fatalism|Whatever will happen will happen, no matter what we do.
+meta|Ship of Theseus|If every plank of a ship is gradually replaced, is it still the same ship?
+meta|Personal identity over time|What makes you the same person you were at age five, when almost everything about you has changed?
+meta|Plato's theory of Forms|Perfect, unchanging ideals like Justice and Beauty exist beyond the physical world we see.
+meta|Physicalism|Everything that exists is ultimately physical: matter, energy and their interactions.
+meta|Idealism|Reality is fundamentally mental. Berkeley: to exist is to be perceived.
+meta|Solipsism|The idea that only your own mind is certain to exist.
+meta|Presentism vs eternalism|Does only the present moment exist, or are past, present and future all equally real?
+meta|The nature of time|Is time real, or just the way we experience change?
+meta|Why is there something rather than nothing?|Leibniz's question: why does anything exist at all?
+meta|Causation|Hume: we never see a cause, only one event regularly followed by another. What is causation really?
+meta|Universals|Does redness exist apart from all the red things, or are there only individual red objects?
+meta|Possible worlds|Things could have gone differently. Do other possible worlds exist in any sense?
+meta|Zeno's paradoxes|To cross a room you must first cross half, then half the rest, forever. How does motion happen at all?
+meta|What is truth?|Is a statement true because it matches reality, fits with other beliefs, or works in practice?
+meta|Is mathematics invented or discovered?|Do numbers exist out there to be found, or are they human creations?
+meta|Laws of nature|Do laws of nature govern what happens, or just describe patterns we notice?
+meta|Existence precedes essence|Sartre: humans exist first and then define who they are through their choices.
+meta|Emergence|Wholes can have properties their parts lack, like wetness from water molecules. Is consciousness emergent?
+meta|Reductionism vs holism|Can everything be understood by breaking it into parts, or does the whole matter more?
+meta|The Dreaming|In many Aboriginal cultures, the Dreaming is an ongoing reality linking ancestral beings, Country, law and people.
+meta|Randomness|Is anything truly random, or is randomness just our ignorance of causes?
+meta|When do parts make a whole?|Is a pile of bricks an object? When do separate things combine into one new thing?
+meta|Infinity|Can there be an actual infinite number of things, or is infinity just an idea?
+meta|Holes and shadows|Do holes and shadows exist, or are they just absences?
+meta|Change and identity|Heraclitus: you can't step in the same river twice. Can anything stay the same while changing?
+meta|Nothingness|Is it possible for there to be absolutely nothing? Can we even imagine it?
+meta|Fiction and existence|Does Sherlock Holmes exist in any sense? What does it mean to say he lives on Baker Street?
+mind|The mind-body problem|How can a physical brain produce thoughts, feelings and experiences?
+mind|Cartesian dualism|Descartes: the mind and body are two different kinds of substance.
+mind|The hard problem of consciousness|David Chalmers: why does brain activity feel like anything from the inside at all?
+mind|Qualia|The subjective qualities of experience, like what red looks like to you or how coffee tastes.
+mind|The problem of other minds|You only experience your own mind. How do you know anyone else has one?
+mind|Philosophical zombies|Could there be a being that acts exactly like a person but has no inner experience at all?
+mind|What is a person?|What makes something a person: a human body, a mind, self-awareness, or relationships?
+mind|The bundle theory of self|Hume: when he looked inward he found only perceptions, never a self. Are you just a bundle of experiences?
+mind|Anatta (no-self)|The Buddhist teaching that there is no permanent, unchanging self.
+mind|Animal minds|Do animals think and feel as we do? How could we ever know what it is like to be a bat?
+mind|Reason vs emotion|Hume called reason the slave of the passions. Should decisions be led by reason or feeling?
+mind|Split-brain cases|When the halves of the brain are surgically separated, is there one person or two?
+mind|Memory and identity|Locke: you are the same person as far back as your memories reach. Is that enough?
+mind|Authenticity|Being true to yourself sounds good, but is there a true self to be true to?
+mind|The extended mind|Clark and Chalmers: your phone or notebook can literally be part of your mind.
+mind|Functionalism|Mental states are defined by what they do, not what they're made of. Could a machine have a mind?
+mind|Can personality change?|Are you stuck with who you are, or can a person fundamentally change?
+mind|Introspection|Can you really know your own mind by looking inward, or do we often misread ourselves?
+mind|Is the self an illusion?|Neuroscience and Buddhism both question whether there is a single 'I' running the show.
+mind|Unconscious mind|How much of what we think and do happens without our awareness, and are we responsible for it?
+mind|Are you your body?|If your mind moved into a different body, would you go with it?
+soc|What is justice?|In Plato's Republic, Thrasymachus says justice is just whatever benefits the stronger. Is he wrong?
+soc|The harm principle|Mill: the only reason to limit someone's freedom is to prevent harm to others.
+soc|Freedom of speech|Should speech ever be limited, and if so, who decides where the line is?
+soc|Is democracy the best system?|Plato worried that rule by the many leads to rule by the loudest. Was he right?
+soc|Utopia|Is a perfect society possible, or does every utopia hide someone's dystopia?
+soc|Civil disobedience|Is it right to break unjust laws? Thoreau, Gandhi and Martin Luther King Jr. thought so.
+soc|Human rights vs political rights|Rights we have just by being human versus rights granted by a state. Where do rights come from?
+soc|The state of nature|Hobbes thought life without government would be a war of all against all. Rousseau disagreed.
+soc|Equality of opportunity vs outcome|Should society aim to give everyone the same start, or the same results?
+soc|Meritocracy|Do people get what they deserve, and is talent itself just luck?
+soc|Distributive justice|How should wealth and resources be shared in a fair society?
+soc|Property rights|Locke: you own what you mix your labour with. Is private property natural or made up?
+soc|Alienation|Marx: workers become estranged from what they make, from their work and from each other.
+soc|The tragedy of the commons|Shared resources get overused when everyone acts in their own interest. How do we stop it?
+soc|The panopticon|Foucault used Bentham's prison design to argue that being watched makes people police themselves.
+soc|Censorship|Is censorship ever justified to protect people, or does it always do more harm?
+soc|Patriotism vs cosmopolitanism|Should we favour our own country, or treat all humans as fellow citizens of the world?
+soc|The paradox of tolerance|Popper: unlimited tolerance can allow the intolerant to destroy tolerance itself.
+soc|Historical injustice|Do people today have responsibilities for wrongs committed by earlier generations?
+soc|The prisoner's dilemma|Two people each do better by betraying the other, yet both lose if both betray. Why cooperate?
+soc|The common good|Is there such a thing as what is good for everyone, and who gets to define it?
+soc|Anarchism|The view that the state is unjustified and society could organise itself without rulers.
+soc|Political authority|What gives a government the right to make laws and enforce them on you?
+soc|Purposes of punishment|Should punishment aim at retribution, deterrence, protection or rehabilitation?
+soc|Privacy|Is privacy a right, and does it matter if you have nothing to hide?
+soc|The banality of evil|Hannah Arendt: terrible harm can be done by ordinary people just following orders.
+soc|Social construction|Are things like money, borders and gender roles real, or made real by our agreement?
+soc|Compulsory voting|Australia requires citizens to vote. Is making people vote fair, or a limit on freedom?
+soc|Universal basic income|Should everyone receive a regular payment from the state, regardless of work?
+soc|Rights and responsibilities|Do rights only exist alongside responsibilities, or are some rights unconditional?
+soc|The veil of ignorance|Rawls: choose the rules of society without knowing who you'll be in it. What rules would you pick?
+soc|Simone de Beauvoir on becoming a woman|Beauvoir argued that being a woman is something society shapes, not just a fact of biology.
+soc|Should voting age be 16?|If 16-year-olds can work and pay tax, should they be able to vote?
+soc|Social media and democracy|Do social media platforms strengthen democracy or damage public debate?
+soc|Laws and morality|Is everything legal moral, and everything illegal immoral?
+lang|Sapir-Whorf hypothesis|Does the language you speak shape the way you think and see the world?
+lang|Language games|Wittgenstein: words get their meaning from how we use them in everyday activities, not from fixed definitions.
+lang|The beetle in a box|Wittgenstein: if everyone has a 'beetle' in a box no one else can see, what does the word 'beetle' mean?
+lang|Sense and reference|Frege: 'the morning star' and 'the evening star' both name Venus but don't mean the same thing.
+lang|Vagueness|Words like 'tall' or 'adult' have fuzzy edges. Does that make them meaningless or just flexible?
+lang|Euphemism|Calling layoffs 'rightsizing' changes how we feel about them. Is softer language honest?
+lang|Framing|The same facts presented differently can lead people to very different conclusions.
+lang|Can animals have language?|Bees dance and parrots talk. What counts as real language?
+lang|Speaker meaning vs listener meaning|Does a sentence mean what the speaker intended, or what the listener understood?
+lang|Speech acts|J.L. Austin: some sentences don't describe things, they do them, like 'I promise' or 'I do'.
+lang|Prescriptivism vs descriptivism|Should we follow the rules of correct grammar, or describe how people actually talk?
+lang|Is perfect translation possible?|Some words, like 'saudade' or 'schadenfreude', seem to lose something in translation.
+lang|The power of slurs|Why do some words have the power to hurt, and does context or speaker change that?
+lang|What's in a name?|Would a rose by any other name smell as sweet? Do names shape how we see things?
+lang|Semantic satiation|Repeat a word over and over and it starts to sound meaningless. What does that say about meaning?
+lang|Newspeak|In Orwell's 1984, the state shrinks language to make rebellious thoughts impossible. Could that work?
+lang|Metaphors we live by|Lakoff and Johnson: we talk about argument as war (attack, defend, win). Do metaphors shape thought?
+lang|Loaded language|Words like 'regime' versus 'government' carry hidden judgements. Can language ever be neutral?
+lang|Language change|Should we accept 'literally' meaning 'figuratively', or is that a loss of meaning?
+lang|Inclusive language|Does changing the words we use change attitudes, or just the surface?
+lang|Are emojis a language?|Can pictures convey meaning as precisely as words?
+lang|Can you think without words?|Is thought possible without language?
+lang|The private language argument|Wittgenstein argued a language only one person could ever understand is impossible.
+lang|Definitions|Can every important word be precisely defined? Try defining 'game' or 'chair'.
+psych|Confirmation bias|We notice and remember evidence that supports what we already believe and ignore the rest.
+psych|Dunning-Kruger effect|People with low skill in an area tend to overestimate how good they are.
+psych|Cognitive dissonance|Festinger: holding conflicting beliefs feels uncomfortable, so we change a belief or explain away evidence.
+psych|The bystander effect|The more people who witness an emergency, the less likely any one of them is to help.
+psych|Milgram's obedience experiments|Many ordinary people obeyed instructions to give what they believed were dangerous shocks. What does that say about us?
+psych|Stanford prison experiment|Zimbardo's study claimed roles turn people cruel, but its methods have been heavily criticised. What can we learn from it?
+psych|Groupthink|The desire for agreement in a group can lead to bad decisions nobody actually supports.
+psych|Asch conformity experiments|People gave obviously wrong answers about line lengths just to go along with the group.
+psych|The hedonic treadmill|After good or bad events, our happiness tends to return to a set level. Can lasting happiness be achieved?
+psych|The placebo effect|A fake treatment can make people feel better if they believe it works. What does that say about mind and body?
+psych|Impostor phenomenon|Successful people often feel like frauds who will be found out.
+psych|Sunk cost fallacy|Continuing something because of what you've already put in, rather than what you'll get from it.
+psych|Anchoring|The first number we hear strongly shapes our later estimates and judgements.
+psych|Availability heuristic|We judge how likely something is by how easily examples come to mind.
+psych|Hindsight bias|After something happens, we feel we knew it would happen all along.
+psych|Fundamental attribution error|We blame others' behaviour on their character but explain our own by our circumstances.
+psych|The paradox of choice|Barry Schwartz: more options can make us less satisfied, not more.
+psych|The marshmallow test|Mischel's studies on delayed gratification. Later research questions how much it really predicts.
+psych|Learned helplessness|After repeated failure or lack of control, people may stop trying even when change is possible.
+psych|Maslow's hierarchy of needs|Basic needs must be met before higher ones like self-actualisation. Is human motivation really a ladder?
+psych|Flow|Csikszentmihalyi: deep absorption in a challenging task is when people feel most alive.
+psych|Nature vs nurture|How much of who we are comes from genes, and how much from upbringing and environment?
+psych|The spotlight effect|We overestimate how much other people notice our mistakes and appearance.
+psych|The halo effect|One good trait, like attractiveness, makes us assume a person has other good traits.
+psych|False memories|Elizabeth Loftus showed people can confidently remember events that never happened.
+psych|Self-fulfilling prophecy|Expecting something to happen can make it happen.
+psych|Negativity bias|Bad experiences affect us more strongly than equally good ones.
+psych|Optimism bias|Most people believe they are less likely than others to experience bad events.
+psych|Peak-end rule|We judge experiences mostly by their most intense moment and how they ended.
+psych|Loss aversion|Losing $50 feels worse than gaining $50 feels good (Kahneman and Tversky).
+psych|Tall poppy syndrome|The tendency, often linked to Australia, to cut down people who stand out or succeed.
+psych|FOMO|Fear of missing out. Is it a modern problem or an old human instinct in a new form?
+psych|Echo chambers|When we only hear views like our own, beliefs harden and opposing views seem crazy.
+psych|The gambler's fallacy|Believing a coin is 'due' to land heads after several tails.
+psych|Survivorship bias|We study the successes that survived and ignore the failures we can't see.
+psych|Moral licensing|Doing something good can make people feel entitled to behave badly afterwards.
+psych|Mere exposure effect|We tend to like things simply because they are familiar.
+psych|Choice and happiness|Are people happier when they have more control over their lives?
+thought|The trolley problem|Would you pull a lever to divert a runaway trolley so it kills one person instead of five?
+thought|The footbridge problem|Would you push a stranger off a bridge to stop a trolley killing five? Why does this feel different?
+thought|The experience machine|Robert Nozick: would you plug into a machine that gives you a perfect simulated life forever?
+thought|Brain in a vat|How do you know you aren't a brain in a lab being fed a simulated world?
+thought|The allegory of the cave|Plato: prisoners mistake shadows on a wall for reality. What would it take to turn around?
+thought|The Chinese room|John Searle: following rules to answer in Chinese without understanding it. Do computers really understand?
+thought|Mary's room|Frank Jackson: a scientist who knows every fact about colour but has never seen red. Does she learn something when she does?
+thought|The ring of Gyges|Plato: if you had a ring that made you invisible, would you still act justly?
+thought|The teleporter problem|If a machine destroys you here and builds an exact copy on Mars, did you travel or die?
+thought|The violinist|Judith Jarvis Thomson: you wake up connected to a violinist who needs your body for nine months to live. Must you stay?
+thought|Swampman|Donald Davidson: lightning creates an exact copy of you from swamp matter. Is it you?
+thought|Zhuangzi's butterfly|The Daoist thinker dreamed he was a butterfly. On waking, was he a man who dreamed, or a butterfly dreaming?
+thought|Buridan's ass|A donkey exactly between two identical haystacks starves because it can't choose. Is reason enough to decide?
+thought|Newcomb's problem|A near-perfect predictor has guessed your choice. Do you take one box or two?
+thought|The ones who walk away from Omelas|Ursula Le Guin: a perfect city's happiness depends on one child's suffering. Would you stay?
+thought|Lifeboat ethics|A lifeboat can't hold everyone. How should you decide who gets on?
+thought|Twin Earth|Hilary Putnam: on a planet identical to Earth, 'water' is a different chemical. Does the word mean the same thing there?
+thought|Inverted spectrum|What if your red looks like my green, but we both call it 'red'? Could we ever tell?
+thought|The simulation hypothesis|Nick Bostrom: if advanced civilisations run simulations, we may well be living in one.
+thought|The ticking time bomb|If torture could stop a bomb killing thousands, would it be justified?
+thought|The survival lottery|John Harris: what if one random person were sacrificed so their organs could save several others?
+thought|The utility monster|Nozick: a being that gets enormous pleasure from everything. Should utilitarians give it everything?
+thought|The infinite monkey theorem|Given infinite time, a monkey typing randomly would eventually type Shakespeare. What does that say about meaning?
+thought|Schrödinger's cat|A cat in a box is both alive and dead until observed. Schrödinger meant it to show quantum theory's strangeness.
+thought|Laplace's demon|A being that knew every particle's position could predict the entire future. Would that rule out free will?
+thought|The grandfather paradox|If you travelled back in time and stopped your grandparents meeting, would you exist?
+thought|Molyneux's problem|Could a person born blind, suddenly given sight, recognise a cube just by looking?
+thought|The last person on Earth|Richard Routley: if the last human alive destroys a forest, has anything wrong been done?
+thought|Kavka's toxin puzzle|You'll be paid to intend tonight to drink a mild poison tomorrow. Can you intend something you know you won't need to do?
+thought|The lifelong coma|Would you rather be happy and wrong about everything, or unhappy and know the truth?
+thought|The invisible gardener|A garden seems tended, but no gardener is ever detected. At what point should we stop believing in one?
+thought|The heap|One grain of sand isn't a heap, and adding one grain never makes a heap. So are there no heaps?
+thought|The fission case|Derek Parfit: if your brain is split and each half transplanted into a new body, which one is you?
+thought|The duplicate self|If an exact copy of you were made, would you both be you? Who gets your life?
+logic|Deductive vs inductive reasoning|Deduction guarantees its conclusion if the premises are true. Induction only makes it probable.
+logic|Validity and soundness|A valid argument's conclusion follows from its premises. A sound one is valid and its premises are true.
+logic|Cogency|A strong inductive argument with true premises. What makes inductive reasoning strong or weak?
+logic|Ad hominem|Attacking the person making an argument instead of the argument itself.
+logic|Straw man|Misrepresenting someone's position to make it easier to attack.
+logic|Slippery slope|Claiming one step will inevitably lead to extreme consequences without good reason.
+logic|False dilemma|Presenting only two options when more exist.
+logic|Appeal to authority|Treating a claim as true because an authority said it, especially outside their expertise.
+logic|Begging the question|An argument that assumes the very thing it is trying to prove.
+logic|Correlation vs causation|Ice cream sales and shark attacks rise together. Does one cause the other?
+logic|Bandwagon fallacy|Assuming something is true or good because many people believe it.
+logic|Red herring|Introducing an irrelevant point to distract from the real issue.
+logic|Appeal to nature|Assuming something is good because it is natural, or bad because it is unnatural.
+logic|Tu quoque|Dismissing criticism by pointing out the critic does the same thing.
+logic|No true Scotsman|Changing a definition to dodge a counterexample.
+logic|Burden of proof|Who has to prove their case: the person making a claim, or the person doubting it?
+logic|The liar paradox|'This sentence is false.' If it's true, it's false, and if it's false, it's true.
+logic|Hasty generalisation|Drawing a broad conclusion from too few examples.
+logic|Ethos, pathos and logos|Aristotle's three modes of persuasion: credibility, emotion and logic. Which should matter most?
+logic|Appeal to emotion|Persuading by stirring feelings rather than giving reasons. When is emotion relevant to an argument?
+logic|Genetic fallacy|Judging a claim by where it came from rather than on its merits.
+logic|Russell's teapot|Bertrand Russell: no one can disprove a tiny teapot orbiting the sun, but that's no reason to believe in it.
+logic|Hanlon's razor|Never assume malice when carelessness or mistake would explain it.
+logic|The principle of charity|Interpret an opponent's argument in its strongest, most reasonable form before criticising it.
+logic|The Socratic method|Testing ideas through a chain of questions that expose assumptions and contradictions.
+logic|Dialectic|Hegel: ideas develop through conflict between opposing positions and their resolution.
+logic|The barber paradox|A barber shaves everyone who doesn't shave themselves. Who shaves the barber?
+logic|The raven paradox|Carl Hempel: if seeing a black raven supports 'all ravens are black', does seeing a green apple too?
+logic|The Monty Hall problem|Should you switch doors in the game show puzzle? Why does the right answer feel so wrong?
+logic|Circular reasoning in everyday life|'It's true because the book says so, and the book is true.' How common is circular reasoning?
+logic|Arguments from analogy|When does comparing two cases give good reason to treat them the same?
+logic|Moving the goalposts|Changing what counts as proof after the original standard has been met.
+schools|Existentialism|Life has no built-in meaning. We are free, and responsible for creating meaning through our choices (Sartre, Beauvoir).
+schools|Absurdism|Camus: humans crave meaning in a silent universe. We must imagine Sisyphus happy.
+schools|Nihilism|Nietzsche warned that losing traditional values could leave people believing nothing matters.
+mean|Bad faith|Sartre: lying to yourself that you have no choice, to avoid the burden of freedom.
+mean|Eternal recurrence|Nietzsche: if you had to live your life over again, infinitely, would you welcome it?
+mean|God is dead|Nietzsche's claim that modern society no longer has a shared foundation for its values.
+mean|Eudaimonia|Aristotle's idea of the good life as flourishing through virtue, not just feeling happy.
+mean|Wu wei|The Daoist ideal of effortless action: going with the flow rather than forcing things.
+mean|Ikigai|A Japanese idea of having a reason for being. What gets you up in the morning?
+mean|Memento mori|Remember that you will die. Does thinking about death make life better?
+mean|Amor fati|Love of fate: Nietzsche's idea of embracing everything that happens, even suffering.
+mean|Mono no aware|The Japanese idea of a gentle sadness at the passing of things, like falling cherry blossoms.
+mean|Wabi-sabi|Finding beauty in things that are imperfect, impermanent and incomplete.
+mean|Ubuntu|A Southern African philosophy often summed up as 'I am because we are'.
+mean|Is beauty in the eye of the beholder?|Is beauty an objective feature of things, or just personal taste?
+mean|What is art?|Can anything be art if someone calls it art? What about a urinal in a gallery?
+mean|The sublime|The awe mixed with fear we feel before storms, mountains and the night sky (Burke, Kant).
+mean|Separating art from artist|Should an artist's bad behaviour change how we value their work?
+mean|Standards of taste|Hume: is there a right answer about whether one artwork is better than another?
+mean|The paradox of tragedy|Why do we enjoy sad films and stories that make us feel bad?
+mean|The paradox of fiction|How can we feel real fear or grief about characters we know don't exist?
+mean|Forgery and value|If a forgery is indistinguishable from the original, why is it worth less?
+mean|Does death give life meaning?|Would life matter less if it never ended?
+mean|Would immortality be good?|Bernard Williams argued living forever would eventually become unbearably boring.
+mean|Epicurus on death|Where death is, I am not. Is it irrational to fear death?
+mean|What is happiness?|Is happiness pleasure, satisfaction, meaning, or something else?
+mean|The value of suffering|Can suffering make a life better, or is that just a story we tell ourselves?
+mean|The paradox of hedonism|Chasing happiness directly tends to make it harder to find.
+mean|Confucian harmony|Confucius: a good life and society come from respect, ritual and fulfilling our roles in relationships.
+mean|The Four Noble Truths|The Buddha taught that suffering comes from craving and can be ended.
+mean|Music and emotion|How can a series of sounds make us feel joy or grief?
+mean|Is the meaning of a work up to the reader?|Does a text mean what the author intended, or what the reader finds in it?
+mean|Boredom|Is boredom just unpleasant, or does it tell us something important about meaning?
+god|The cosmological argument|Everything has a cause, so there must be a first cause, which many call God (Aquinas).
+god|The ontological argument|Anselm: God is the greatest conceivable being, and existing is greater than not, so God exists.
+god|The design argument|Paley: if you found a watch you'd assume a watchmaker. Does nature's complexity imply a designer?
+god|The problem of evil|If God is all-powerful and all-good, why is there suffering?
+god|Pascal's wager|If God exists, belief gains everything. If not, you lose little. Is that a good reason to believe?
+god|The omnipotence paradox|Can God create a stone too heavy for God to lift?
+god|Miracles|Hume: it is always more likely that a report of a miracle is mistaken than that a law of nature was broken.
+god|Religious experience|Can a personal experience of the divine count as evidence that God exists?
+god|Morality without religion|Can people be good without believing in God?
+god|Life after death|Is there any good reason to believe we survive death?
+god|The fine-tuning argument|The universe's constants seem set just right for life. Is that design, luck, or something else?
+god|Religious pluralism|Can more than one religion be true at once?
+god|Karma|Do our actions shape what happens to us? Is karma a fair system of justice?
+god|Divine foreknowledge and free will|If God already knows what you'll do, can you choose otherwise?
+god|Spinoza's God|Spinoza identified God with nature itself. Is that God, or just the universe with a new name?
+god|Faith|Is faith belief without evidence, trust in a person, or something else?
+god|The hiddenness of God|If God wanted a relationship with people, why isn't God's existence more obvious?
+tech|The Turing test|Alan Turing: if a machine's conversation can't be told apart from a human's, should we say it thinks?
+tech|Can AI be conscious?|Could an artificial intelligence ever have real experiences, or only imitate them?
+tech|AI rights|If an AI could suffer, would it deserve moral consideration?
+tech|Self-driving car dilemmas|Who should an autonomous car protect in an unavoidable crash, and who decides?
+tech|Transhumanism|Should we use technology to enhance humans beyond our natural limits?
+tech|Designer babies|Should parents be allowed to edit their children's genes?
+tech|Mind uploading|If your mind were copied into a computer, would it be you?
+tech|Deepfakes and truth|When video can be faked perfectly, how can we know what really happened?
+tech|Algorithmic bias|Can computer systems be unfair, and who is responsible when they are?
+tech|Is technology neutral?|Are tools neither good nor bad, or do they carry values built in?
+tech|Automation and work|If machines do most jobs, where will people find purpose and meaning?
+tech|Colonising space|Do we have a right, or a duty, to settle other planets?
+tech|Existential risk|How much should we sacrifice now to reduce small risks of human extinction?
+tech|Cloning|Would cloning a human be wrong, and would a clone be the same person?
+tech|De-extinction|Should we bring back extinct species like the thylacine?
+tech|The technological singularity|Could AI one day improve itself so fast that humans can no longer understand or control it?
+tech|Is virtual reality real?|David Chalmers argues virtual worlds can be genuinely real. Are virtual experiences less valuable?
+tech|Smartphones and attention|Are our devices changing how we think, focus and remember?
+tech|AI and creativity|Can a machine be creative, or does creativity require a mind?
+tech|Social media and wellbeing|Do platforms built to capture attention make us less happy?
+tech|Should AI make moral decisions?|Would a well-programmed AI be a fairer judge than a human?
+tech|Robots as companions|Is a relationship with a robot or chatbot a real relationship?
+tech|Data ownership|Who owns the data about you, and should companies be allowed to sell it?
+life|What is the meaning of life?|Is there one, do we make our own, or is the question itself confused?
+life|Better to be happy or good?|If you had to choose, which should you pick?
+life|Can money buy happiness?|Research suggests money helps up to a point. Is that the right way to think about it?
+life|Everything happens for a reason|A comforting idea, but is it true, and what would it mean if it were?
+life|Is honesty always the best policy?|Are white lies ever the right thing to do?
+life|What makes a good friend?|Aristotle described friendships of usefulness, pleasure and virtue. Which kind do you have?
+life|Friends who disagree|Can you be close friends with someone whose values you strongly disagree with?
+life|Breaking promises|Is it ever okay to break a promise?
+life|What is love?|A feeling, a choice, a chemical reaction, or something more?
+life|Should you follow your passion?|Is it good advice to do what you love, or a recipe for disappointment?
+life|Are people basically good?|Hobbes thought people were naturally selfish; Rousseau thought society corrupts us. Who was right?
+life|Is it wrong to pirate media?|If copying doesn't take anything away from the owner, is it stealing?
+life|Should school be compulsory?|Do young people have a right to choose whether to go to school?
+life|Do grades measure learning?|What do marks actually tell us about what someone knows?
+life|Judging by appearances|We are told not to judge a book by its cover, but are first impressions ever reliable?
+life|Can we ever understand each other?|Can you truly know what another person feels or means?
+life|Is ignorance bliss?|Would you rather know a painful truth or live happily without knowing it?
+life|Is perfection possible?|Is aiming for perfection motivating or damaging?
+life|Does luck exist?|Is luck a real force, or just a name for chance?
+life|Better to have loved and lost?|Is it better to have loved and lost than never to have loved at all?
+life|Is tradition valuable for its own sake?|Should we keep traditions just because they are traditions?
+life|Is fairness the same as equality?|Does treating everyone fairly mean treating everyone the same?
+life|Can you be too nice?|Is kindness ever a weakness?
+life|What do we owe our parents?|Do children have duties to their parents, and where do they come from?
+life|Are heroes born or made?|Is heroism a trait of character or a response to circumstances?
+life|Is competition good?|Does competition bring out the best in people or the worst?
+life|Does age bring wisdom?|Are older people wiser, or just more experienced?
+life|Is cheating in games always wrong?|If a game's rules are just made up, why does breaking them matter?
+life|Should children be told Santa is real?|Is it a harmless tradition or a lie we shouldn't tell?
+life|Is a hot dog a sandwich?|A silly question about a serious problem: how do we decide what belongs in a category?
+life|What counts as natural?|Is a vaccine natural? Is a city? Does 'natural' mean anything useful?
+life|Can anyone be truly unbiased?|Is objectivity possible, or does everyone see from somewhere?
+life|Is there a duty to vote?|Even where it isn't compulsory, do citizens have a moral duty to vote?
+life|Is it okay to eat meat?|What reasons for and against eating animals hold up under scrutiny?
+life|What makes a place home?|Is home a building, a people, a land, or a feeling?
+life|Is sport just a game?|Why do people care so much about games whose outcomes don't really matter?
+life|Should we always forgive?|Are some things unforgivable?
+life|Can you be good at something without effort?|Does talent matter more than hard work?
+life|Is it ever right to break the rules?|When, if ever, should you break a school or workplace rule?
+life|What makes something cool?|Is coolness about being different, fitting in, or something else entirely?
+life|Is it selfish to want to be happy?|Should your own happiness be your main goal?
+life|Can you be friends with your teacher or boss?|Do roles and power differences make real friendship impossible?
+life|Is it better to be a big fish in a small pond?|Would you rather stand out in a small group or be average among the best?
+life|Is laziness a vice?|Is doing nothing ever valuable, or always a moral failing?
+schools|Cynicism|Diogenes lived in a barrel and mocked social conventions, arguing that virtue means living simply and naturally.
+schools|Pragmatism|William James and John Dewey: an idea is true if it works in practice and helps us get around in the world.
+schools|Humanism|A worldview that puts human reason, dignity and wellbeing at the centre, without relying on the supernatural.
+schools|Transcendentalism|Emerson and Thoreau: trust yourself, live simply, and look for truth in nature rather than in institutions.
+schools|Pyrrhonian scepticism|Ancient sceptics suspended judgement on everything, believing that this led to peace of mind.
+schools|Daoism|The Chinese tradition of Laozi and Zhuangzi: live in harmony with the Dao, the natural way of things.
+schools|Mindfulness|Paying full, non-judgemental attention to the present moment. An ancient Buddhist practice turned modern trend. Does it live up to the hype?
+schools|Marxism|Marx argued that history is driven by class struggle and that capitalism would eventually give way to a classless society.
+schools|Liberalism|The political philosophy that puts individual liberty, rights and equality before the law at its centre (Locke, Mill).
+schools|Libertarianism|The political view that individual freedom should be maximised and government kept to a minimum.
+schools|Conservatism|Edmund Burke argued that change should be gradual, because traditions carry hard-won wisdom.
+schools|Objectivism|Ayn Rand's philosophy that rational self-interest is the highest virtue. Is selfishness really a virtue?
+schools|Pessimism|Schopenhauer argued that life is driven by endless desire and is mostly suffering. Was he right?
+schools|Optimism|Leibniz claimed this is the best of all possible worlds, and Voltaire mocked the idea in Candide.
+schools|Romanticism|A movement that valued emotion, imagination and nature over cold reason and industry.
+schools|Minimalism|The modern idea that owning and doing less leads to a better life. Philosophy or lifestyle trend?
+schools|Feminism|A range of philosophies that examine and challenge inequality between genders.
+schools|Postmodernism|Suspicion of grand stories and universal truths, and the view that knowledge is shaped by power and perspective.
+schools|The Sophists|Paid teachers of persuasion in ancient Athens. Plato accused them of caring more about winning than about truth.
+schools|The dichotomy of control|Epictetus: some things are up to us (our judgements and actions) and some are not. Focus only on the first.
+schools|Premeditatio malorum|The Stoic practice of imagining what could go wrong in advance, so you are calmer if it does.
+schools|The view from above|Marcus Aurelius imagined looking down on life from a great height to put everyday worries in perspective.
+schools|Stoicism today|Stoicism is popular with athletes, business leaders and influencers. Is the modern version true to the original?
+rally|Half-time, down by 20|Your team is losing badly at half-time in the grand final. Give the speech that turns it around.
+rally|First day of Year 12|Inspire your year level on the first day of their final year of school.
+rally|The night before exams|Your study group is exhausted and doubting themselves. Rally them for one more push.
+rally|Join the cause|Convince your class to join a cause you care about, like a beach clean-up or a fundraiser.
+rally|The captain's first speech|You've just been named team captain. Tell your team what you'll stand for together.
+rally|After the loss|Your team just lost a game it should have won. Pick everyone back up.
+rally|The underdogs|Your small team is about to face the reigning champions. Convince them they can win.
+rally|Graduation speech|Give a short graduation speech about facing the future with courage.
+rally|Your first hires|Pitch your start-up's vision to the first three people you want to join you.
+rally|Day five of the trek|You're leading a hiking group on day five of a seven-day trek. Everyone is tired and wet. Keep them going.
+rally|Change the school|Persuade the student council to back an idea that will improve your school.
+rally|Speak up|Encourage your peers to speak up when they see something wrong.
+rally|We can still act|Rally young people to believe their actions can still make a difference to the climate.
+rally|Opening night|The cast of the school play is terrified before opening night. Settle their nerves and lift them up.
+rally|Give up a Saturday|Convince people to volunteer one Saturday for something that matters.
+rally|Back yourself|Talk to a friend who has just been rejected from something they really wanted.
+rally|The final race|Your relay team is about to run the last race of the season. Make it count.
+rally|Thank you, and keep going|Thank a team or community that helped you, and inspire them to keep going.
+rally|Rebuilding together|Your town has been hit by bushfire. Speak to the community about rebuilding together.
+rally|Minutes before launch|You're commanding the first crewed mission to Mars. Address your crew minutes before launch.
+rally|New team, one goal|A newly formed team doesn't know each other yet. Unite them around a shared goal.
+rally|Choose Philosophy|Convince a class of Year 10s to choose Philosophy next year.
+rally|The impossible deadline|Your group project is due tomorrow and nothing works. Rally the team for one final effort.
+rally|Stand together|After a hurtful incident at school, speak to your year level about respect and belonging.
+rally|Be the first|Inspire someone to be the first in their family to try something new, like going to university.
+`;
+const RAW_VOCAB = `
+logic|Premise|noun|A statement offered as a reason to support a conclusion.|The argument's second premise assumes that everyone acts out of self-interest.
+logic|Conclusion|noun|The claim an argument is trying to prove.|Her conclusion only follows if we accept that animals can suffer.
+logic|Valid|adjective|Describes a deductive argument in which the conclusion must be true if the premises are true.|The argument is valid, but because one premise is false, it isn't sound.
+logic|Sound|adjective|Describes a valid deductive argument whose premises are all actually true.|A sound argument guarantees that its conclusion is true.
+logic|Cogent|adjective|Describes a strong inductive argument with true premises; convincing and well reasoned.|He made a cogent case that the trial results were reliable.
+logic|Fallacy|noun|A mistake in reasoning that makes an argument weaker than it looks.|Attacking the speaker instead of the point is a common fallacy.
+logic|Deduction|noun|Reasoning in which the conclusion follows necessarily from the premises.|By deduction, if all mammals breathe air and whales are mammals, whales breathe air.
+logic|Induction|noun|Reasoning from particular observations to a general or probable conclusion.|Every swan she had seen was white, so by induction she assumed all swans were.
+logic|Inference|noun|A conclusion reached on the basis of evidence and reasoning.|The detective's inference was that the thief knew the house well.
+logic|Syllogism|noun|A deductive argument with two premises and a conclusion.|"All humans are mortal; Socrates is human; so Socrates is mortal" is a classic syllogism.
+logic|Counterexample|noun|A specific case that shows a general claim is false.|One black swan was a counterexample to the claim that all swans are white.
+logic|Rebuttal|noun|A response that argues against a claim or objection.|Her rebuttal showed the statistics had been taken out of context.
+logic|Tautology|noun|A statement that is true simply by definition, so it tells us nothing new.|Saying "it is what it is" is a tautology.
+logic|Contradiction|noun|Two claims that cannot both be true at the same time.|Saying you value honesty while lying to your friends is a contradiction.
+logic|Paradox|noun|A seemingly sound argument that leads to an absurd or self-contradictory conclusion.|The liar paradox has puzzled logicians for over two thousand years.
+logic|Assumption|noun|Something taken for granted, often without being stated.|The plan rests on the assumption that everyone will cooperate.
+logic|Non sequitur|noun|A conclusion that does not follow from what came before.|"It's raining, so the government is corrupt" is a non sequitur.
+logic|Equivocation|noun|Using one word in two different senses within the same argument.|The argument relied on equivocation, switching between two meanings of "free".
+logic|Analogy|noun|A comparison that uses similarities between two things to make a point.|Paley's analogy compares the universe to a watch.
+logic|Axiom|noun|A statement accepted as true without proof, used as a starting point for reasoning.|Geometry builds everything from a handful of axioms.
+logic|Necessary condition|noun|Something that must be present for an outcome, though it may not be enough on its own.|Oxygen is a necessary condition for fire, but not a sufficient one.
+logic|Sufficient condition|noun|Something whose presence guarantees an outcome.|Being a square is a sufficient condition for being a rectangle.
+logic|Reductio ad absurdum|noun|Disproving a claim by showing that it leads to an absurd result.|She used a reductio ad absurdum to show the rule would ban all speech.
+logic|Corollary|noun|A further claim that follows naturally from one already established.|A corollary of his view is that no one is ever truly to blame.
+logic|Dichotomy|noun|A division into two contrasting parts, sometimes a false one.|The debate set up a false dichotomy between safety and freedom.
+logic|Hypothesis|noun|A proposed explanation that can be tested.|Her hypothesis was that sleep improves memory.
+logic|Generalisation|noun|A broad statement based on specific cases.|Calling all teenagers lazy is an unfair generalisation.
+know|Epistemology|noun|The branch of philosophy that studies knowledge and justified belief.|Questions about fake news are really questions of epistemology.
+know|A priori|adjective|Knowable through reason alone, independent of experience.|That 7 + 5 = 12 is known a priori.
+know|A posteriori|adjective|Knowable only through experience or observation.|That ice floats on water is known a posteriori.
+know|Empirical|adjective|Based on observation or experiment rather than theory alone.|There is strong empirical evidence that exercise improves mood.
+know|Scepticism|noun|An attitude of doubt toward claims, or the philosophical view that knowledge is uncertain or impossible.|Healthy scepticism protects you from scams.
+know|Justification|noun|The reasons or evidence that make a belief reasonable to hold.|A lucky guess has no justification, even if it turns out right.
+know|Fallible|adjective|Capable of being wrong.|Even experts are fallible, so evidence still matters.
+know|Objective|adjective|Not dependent on anyone's personal feelings or opinions.|Is there an objective answer to which song is best?
+know|Subjective|adjective|Based on or dependent on personal feelings, tastes or opinions.|Taste in food is largely subjective.
+know|Bias|noun|A tendency to favour one view unfairly, often without realising it.|The survey had a bias because it only asked people who already agreed.
+know|Dogmatic|adjective|Insisting a belief is true without being open to evidence or debate.|A dogmatic thinker won't change their mind even when shown to be wrong.
+know|Credible|adjective|Able to be believed; trustworthy.|A credible source names its evidence.
+know|Corroborate|verb|To confirm or support a claim with further evidence.|Two witnesses corroborated her account.
+know|Anecdotal|adjective|Based on personal stories rather than systematic evidence.|"My uncle smoked and lived to 90" is anecdotal evidence.
+know|Paradigm|noun|A framework of assumptions and methods that shapes how a field thinks.|Darwin's theory created a new paradigm in biology.
+know|Heuristic|noun|A mental shortcut or rule of thumb for making decisions quickly.|"Trust the reviews" is a useful heuristic, but it can mislead.
+know|Rationalisation|noun|Inventing a reasonable-sounding justification for something done for other reasons.|"I deserved a break" was a rationalisation for skipping study.
+know|Verify|verb|To check that something is true or accurate.|Always verify a quote before sharing it.
+know|Conjecture|noun|An opinion or conclusion based on incomplete information.|Without evidence, his theory is just conjecture.
+know|Speculative|adjective|Based on guesswork rather than firm evidence.|Claims about life on other planets remain speculative.
+ethics|Consequentialism|noun|The view that whether an action is right depends only on its consequences.|Consequentialism would allow lying if it produced better results.
+ethics|Deontology|noun|An approach to ethics based on duties and rules rather than outcomes.|Kant's deontology says some acts are wrong whatever the consequences.
+ethics|Virtue|noun|A good character trait, such as honesty, courage or kindness.|Aristotle saw courage as a virtue between cowardice and recklessness.
+ethics|Utilitarian|adjective|Aimed at producing the greatest good for the greatest number.|The policy was defended on utilitarian grounds.
+ethics|Altruism|noun|Selfless concern for the wellbeing of others.|Donating blood to strangers is a simple act of altruism.
+ethics|Autonomy|noun|The capacity to make your own decisions and govern yourself.|Respecting a patient's autonomy means letting them choose their treatment.
+ethics|Integrity|noun|Having strong moral principles and acting on them consistently.|She showed integrity by admitting the error, even though no one would have noticed.
+ethics|Relativism|noun|The view that truth or morality depends on culture or individual perspective.|Moral relativism struggles to say any practice is truly wrong.
+ethics|Absolutism|noun|The view that some moral rules hold without exception.|Moral absolutism says torture is always wrong, whatever the circumstances.
+ethics|Normative|adjective|Concerned with how things ought to be, rather than how they are.|"People should recycle" is a normative claim.
+ethics|Descriptive|adjective|Concerned with how things actually are, without judging them.|"Most people recycle" is a descriptive claim.
+ethics|Hypocrisy|noun|Claiming to hold standards you don't actually follow.|Lecturing others about waste while littering is hypocrisy.
+ethics|Culpable|adjective|Deserving blame.|Is the driver culpable if the brakes failed without warning?
+ethics|Impartial|adjective|Treating all sides or people equally, without favouritism.|A referee must remain impartial.
+ethics|Egalitarian|adjective|Believing all people are equal and deserve equal rights and opportunities.|The club had an egalitarian rule that everyone got one vote.
+ethics|Paternalism|noun|Limiting someone's freedom for what is claimed to be their own good.|Banning sugary drinks is sometimes criticised as paternalism.
+ethics|Magnanimous|adjective|Generous or forgiving, especially toward a rival or someone less powerful.|The winner was magnanimous in her victory speech.
+ethics|Conscientious|adjective|Careful and wanting to do what is right.|A conscientious student checks their sources.
+ethics|Pragmatic|adjective|Dealing with things sensibly and realistically, based on practical results.|A pragmatic solution may not be perfect, but it works.
+ethics|Sanctity|noun|The quality of being sacred or of supreme value.|Arguments about the sanctity of life appear in debates on euthanasia.
+ethics|Reciprocity|noun|Exchanging things with others for mutual benefit.|The golden rule is built on reciprocity.
+ethics|Complicit|adjective|Involved with others in wrongdoing, even passively.|Staying silent can make you complicit.
+ethics|Benevolent|adjective|Well meaning and kind.|A benevolent ruler is still a ruler.
+meta|Metaphysics|noun|The branch of philosophy that studies the fundamental nature of reality and existence.|Whether time is real is a question of metaphysics.
+meta|Ontology|noun|The study of what exists and what kinds of things there are.|Do numbers belong in our ontology?
+meta|Determinism|noun|The view that every event is fully caused by earlier events.|If determinism is true, could you have chosen differently?
+meta|Agency|noun|The capacity to act and make choices.|The story gives its main character real agency.
+meta|Consciousness|noun|The state of being aware of yourself and your surroundings.|Scientists still debate how the brain produces consciousness.
+meta|Dualism|noun|The view that reality, or a person, is made of two fundamentally different kinds of thing, such as mind and matter.|Descartes' dualism separates the mind from the body.
+meta|Materialism|noun|In philosophy, the view that everything that exists is physical.|A materialist says thoughts are just brain activity.
+meta|Phenomenon|noun|Something observed to exist or happen, especially something that needs explaining.|Déjà vu is a strange phenomenon.
+meta|Abstract|adjective|Existing as an idea rather than as a physical object.|Justice is an abstract concept.
+meta|Concrete|adjective|Existing in a physical form; specific rather than general.|Give a concrete example to support your point.
+meta|Essence|noun|The quality that makes something what it is.|Sartre denied that humans have a fixed essence.
+meta|Contingent|adjective|Could have been otherwise; dependent on circumstances.|Your existence is contingent on your parents having met.
+meta|Inherent|adjective|Existing as a permanent, essential part of something.|Some argue nature has inherent value.
+meta|Transcendent|adjective|Going beyond ordinary experience or the physical world.|Many religions describe God as transcendent.
+meta|Existential|adjective|Relating to existence, especially human existence and its meaning.|Finishing school can bring an existential crisis about what comes next.
+meta|Teleology|noun|Explaining things by their purpose or goal.|Aristotle's teleology says an acorn's purpose is to become an oak.
+meta|Introspection|noun|Examining your own thoughts and feelings.|Journalling encourages introspection.
+meta|Perception|noun|The process of becoming aware of something through the senses.|Optical illusions show that perception can be tricked.
+meta|Absurd|adjective|Wildly unreasonable; in existentialism, the clash between our search for meaning and a universe that offers none.|Camus thought we must face the absurd honestly.
+meta|Ephemeral|adjective|Lasting for a very short time.|Fame on social media is often ephemeral.
+meta|Mortality|noun|The state of being subject to death.|Reflecting on mortality can clarify what matters.
+meta|Sentient|adjective|Able to perceive or feel things.|Most people agree that dogs are sentient.
+rhet|Rhetoric|noun|The art of persuasive speaking or writing.|Politicians train in rhetoric.
+rhet|Ethos|noun|Persuasion through the credibility or character of the speaker.|A doctor talking about health has strong ethos.
+rhet|Pathos|noun|Persuasion through appeal to the audience's emotions.|The charity ad relied on pathos.
+rhet|Logos|noun|Persuasion through logic, reasons and evidence.|Her speech used logos by citing clear data.
+rhet|Eloquent|adjective|Fluent and persuasive in speaking or writing.|He gave an eloquent defence of free speech.
+rhet|Articulate|adjective|Able to express ideas clearly and effectively.|She is articulate even under pressure.
+rhet|Concise|adjective|Giving a lot of information clearly in few words.|A concise answer respects the listener's time.
+rhet|Euphemism|noun|A mild word used in place of one that may seem harsh.|"Passed away" is a euphemism for "died".
+rhet|Hyperbole|noun|Deliberate exaggeration for effect.|"I've told you a million times" is hyperbole.
+rhet|Irony|noun|Saying the opposite of what you mean, or an outcome that is the opposite of what was expected.|The irony is that the fire station burned down.
+rhet|Rhetorical question|noun|A question asked for effect, not to get an answer.|"Who doesn't want to be happy?" is a rhetorical question.
+rhet|Sophistry|noun|Clever but misleading argument intended to deceive.|The advertisement's claims were pure sophistry.
+rhet|Polemic|noun|A strong verbal or written attack on someone or something.|The essay was a polemic against standardised testing.
+rhet|Concede|verb|To admit that something is true, often reluctantly.|I concede that uniforms are cheaper, but they limit expression.
+rhet|Refute|verb|To prove that a claim or argument is wrong.|She refuted his claim with census data.
+rhet|Substantiate|verb|To provide evidence to support a claim.|Can you substantiate that statistic?
+rhet|Nuance|noun|A subtle difference in meaning, expression or opinion.|The debate lacked nuance; it was all black and white.
+rhet|Digress|verb|To move away from the main subject for a while.|Let me digress for a moment to explain the background.
+rhet|Candid|adjective|Truthful and straightforward; frank.|Thank you for your candid feedback.
+rhet|Connotation|noun|An idea or feeling a word suggests beyond its literal meaning.|"Cheap" has a negative connotation that "affordable" doesn't.
+rhet|Anecdote|noun|A short, interesting story about a real event or person.|She opened her speech with an anecdote about her grandmother.
+rhet|Emphatic|adjective|Expressed forcefully and clearly.|His answer was an emphatic no.
+rhet|Persuasive|adjective|Good at convincing someone to believe or do something.|A persuasive argument anticipates objections.
+rhet|Allusion|noun|An indirect reference to something, such as a famous story or event.|Calling it "Pandora's box" is an allusion to Greek myth.
+acad|Ubiquitous|adjective|Present or found everywhere.|Smartphones are now ubiquitous.
+acad|Juxtapose|verb|To place two things side by side to highlight contrast.|The film juxtaposes wealth and poverty.
+acad|Profound|adjective|Very great or intense; showing deep insight.|The book had a profound effect on her thinking.
+acad|Esoteric|adjective|Understood by only a small number of people with specialised knowledge.|The lecture was too esoteric for beginners.
+acad|Ambivalent|adjective|Having mixed or contradictory feelings about something.|I'm ambivalent about moving overseas.
+acad|Arbitrary|adjective|Based on random choice or personal whim rather than reason.|The rule felt arbitrary because no one could explain it.
+acad|Inevitable|adjective|Certain to happen; unavoidable.|Some change is inevitable.
+acad|Mitigate|verb|To make something less severe or serious.|Planting trees can help mitigate urban heat.
+acad|Exacerbate|verb|To make a problem or bad situation worse.|Lack of sleep can exacerbate stress.
+acad|Catalyst|noun|Something that causes or speeds up an important change.|The protest was a catalyst for reform.
+acad|Complacent|adjective|Uncritically satisfied with yourself or the situation.|Winning early made the team complacent.
+acad|Resilience|noun|The capacity to recover quickly from difficulties.|Resilience grows through facing setbacks.
+acad|Empathy|noun|The ability to understand and share the feelings of another.|Good leaders show empathy.
+acad|Apathy|noun|Lack of interest, enthusiasm or concern.|Voter apathy can weaken democracy.
+acad|Pervasive|adjective|Spreading widely through an area or group.|Advertising is pervasive online.
+acad|Scrutiny|noun|Close, critical examination.|The claim didn't survive scrutiny.
+acad|Precedent|noun|An earlier event or decision used as an example or guide.|The ruling set a precedent for future cases.
+acad|Utopian|adjective|Idealistic; aiming for a perfect society.|The plan was utopian but inspiring.
+acad|Dystopian|adjective|Relating to an imagined society full of suffering or injustice.|Orwell's 1984 is a dystopian novel.
+acad|Zeitgeist|noun|The defining spirit or mood of a particular period.|The song captured the zeitgeist of the 1960s.
+acad|Anachronism|noun|Something that belongs to a different period of time.|A mobile phone in a medieval film is an anachronism.
+acad|Cynical|adjective|Believing that people are motivated purely by self-interest; distrustful.|She was cynical about the company's green promises.
+acad|Idealistic|adjective|Pursuing high principles, sometimes unrealistically.|Young voters are often called idealistic.
+acad|Tenuous|adjective|Very weak or slight.|The link between the two events is tenuous.
+acad|Salient|adjective|Most noticeable or important.|Summarise the salient points of the argument.
+acad|Pertinent|adjective|Relevant to the matter at hand.|That's a pertinent question.
+acad|Implicit|adjective|Suggested but not directly stated.|There was an implicit criticism in his tone.
+acad|Explicit|adjective|Stated clearly and in detail.|The instructions were explicit.
+acad|Paradigm shift|noun|A fundamental change in approach or underlying assumptions.|The internet caused a paradigm shift in how we communicate.
+`;
+const RAW_INTERVIEW = `
+about|Tell me about yourself.|Give a short, structured story: who you are now, what you've done, and where you're heading. Keep it relevant to the opportunity.|P
+about|What are your greatest strengths?|Choose one or two strengths and prove each one with evidence instead of just listing adjectives.|P
+about|What is a weakness you are working on?|Pick a real but manageable weakness and show what you are actively doing to improve it.|P
+about|How would your friends describe you?|Choose three words and back up at least one with a quick example.|P
+about|What achievement are you most proud of?|Explain why it mattered to you, not just what happened.|S
+about|What do you do in your spare time?|Use your interests to show something about your character or skills.|P
+about|Who is someone you admire, and why?|Focus on the qualities you admire and how they shape your own behaviour.|P
+about|What makes you different from other applicants?|Name something specific and show how it would add value.|P
+about|Describe yourself in three words.|Pick words you can justify, and justify at least one with an example.|P
+motive|Why do you want this role?|Link what the role involves to your skills and genuine interests.|P
+motive|Why should we choose you?|Summarise your strongest match to what they need, with evidence.|P
+motive|Where do you see yourself in five years?|Show ambition and direction without sounding unrealistic.|P
+motive|Why are you interested in studying this subject?|Point to a specific moment or experience that sparked your interest.|P
+motive|What do you know about our organisation?|Show you've done your research, then connect it to why you want to be there.|P
+motive|What does success mean to you?|Give a personal definition and an example of when you felt successful.|P
+motive|What motivates you?|Be honest and specific, and show how that motivation appears in your actions.|P
+motive|What would you hope to learn from this opportunity?|Show curiosity and that you have thought about how you would grow.|P
+motive|Why did you choose the subjects you are studying?|Show that your choices were deliberate and connect to your goals.|P
+behav|Tell me about a time you worked in a team.|Make your own contribution clear, not just what the group did.|S
+behav|Describe a time you showed leadership.|Leadership can be informal. Focus on how you influenced or supported others.|S
+behav|Tell me about a time you made a mistake.|Own it, explain what you learned, and show what you did differently afterwards.|S
+behav|Describe a time you dealt with conflict.|Stay fair to the other person and focus on how it was resolved.|S
+behav|Tell me about a time you had to meet a tight deadline.|Show how you planned and prioritised under pressure.|S
+behav|Describe a time you solved a difficult problem.|Walk through your reasoning step by step.|S
+behav|Tell me about a time you had to adapt to change.|Show flexibility and a positive outcome.|S
+behav|Describe a time you went above and beyond.|Explain why you chose to do more than was required.|S
+behav|Tell me about a time you received criticism.|Show that you can listen, reflect and improve.|S
+behav|Describe a time you had to persuade someone.|Explain the reasons and evidence you used, not just the outcome.|S
+behav|Tell me about a time you failed.|Choose a genuine failure and focus on what you learned from it.|S
+behav|Describe a time you helped someone.|Focus on what you noticed and why you chose to act.|S
+behav|Tell me about a time you had to learn something quickly.|Show your learning strategy, not just that you managed it.|S
+behav|Describe a time you showed initiative.|Show that you acted without being told to.|S
+behav|Tell me about a time you balanced several commitments.|Show how you prioritised and what you gave up.|S
+behav|Describe a time you stood up for something you believed in.|Explain the values behind your choice and the risk involved.|S
+behav|Tell me about a time you worked with someone very different from you.|Show respect, curiosity and what you learned from them.|S
+values|What would you do if you saw a colleague doing something dishonest?|Show how you would balance loyalty, fairness and honesty, and explain your reasoning.|P
+values|Is it ever acceptable to break a rule?|Give a clear position, a reason and a realistic example.|P
+values|What does integrity mean to you?|Define it in your own words and show it in action.|P
+values|How do you treat people you disagree with?|Show respect and openness, with an example.|P
+values|What is a value you would not compromise on?|Explain why it matters and describe a time it was tested.|P
+values|How would you handle being asked to do something you think is wrong?|Show how you would raise concerns respectfully and what your limit would be.|P
+values|What responsibility do we have to our community?|Give a position and connect it to something you have actually done.|P
+values|Is honesty always the best policy at work?|Weigh honesty against kindness and tact, and take a side.|P
+values|What does fairness mean in a team?|Define it, then show how you have tried to be fair in practice.|P
+study|What has been your favourite subject, and why?|Go beyond "it's interesting". Name a specific idea or skill that grabbed you.|P
+study|What is the most important thing you have learned at school?|It doesn't have to be content. A skill or attitude can be a strong answer.|P
+study|How do you handle stress during exams?|Show a practical strategy that you actually use.|P
+study|How do you prefer to learn?|Show self-awareness and that you can adapt when your preferred way isn't available.|P
+study|Tell me about a book, idea or film that changed how you think.|Explain what you believed before, what changed, and why.|P
+study|What skills has philosophy given you?|Link skills like reasoning and argument analysis to real situations beyond the classroom.|P
+study|How do you organise your time?|Describe your actual system and show it works.|P
+study|What would you change about your school, and why?|Be constructive. Give a reason and a realistic way to make the change.|P
+think|How would you explain a complex idea to a young child?|Pick the idea, then actually explain it simply in your answer.|P
+think|If you had to raise $1,000 for charity in a month, how would you do it?|Show a clear plan with steps, and think about risks.|P
+think|How do you make a difficult decision?|Describe your process and give an example of using it.|P
+think|What would you do if you were given a task with no clear instructions?|Show initiative balanced with knowing when to ask.|P
+think|How would you improve public transport in your city?|Identify a specific problem before proposing a solution.|P
+think|What would you do in your first week in this role?|Show that you'd listen and learn before trying to change things.|P
+think|How do you know when an argument is a good one?|Use terms like validity, soundness and evidence, with an example.|P
+think|How would you handle two important tasks due at the same time?|Show how you would prioritise and communicate.|P
+curve|If you could have dinner with any philosopher, who would it be and why?|Show what you know about them and what you would ask.|P
+curve|What is a belief you held that you have since changed?|Show intellectual honesty and what convinced you.|P
+curve|If you were an animal, which would you be and why?|Use it to reveal a genuine trait, and keep it light.|P
+curve|What question do you wish I had asked you?|Use it to share a strength you haven't had a chance to mention.|P
+curve|Convince me to agree with an unpopular opinion you hold.|Pick something reasonable and argue it with clear reasons.|P
+curve|What would you do with an extra hour each day?|Your answer reveals your priorities, so choose thoughtfully.|P
+curve|Sell me this pen.|Ask about or imagine the buyer's needs, then focus on the benefit to them.|P
+curve|What is the most important problem facing your generation?|Name it, explain why, and suggest one way forward.|P
+curve|If you could change one thing about the world, what would it be?|Be specific enough to sound thought through.|P
+curve|What is something you are curious about right now?|Show genuine enthusiasm and what you have done to explore it.|P
+curve|Do you have any questions for us?|Always have one or two thoughtful questions ready. Practise asking one now.|P
+`;
+const RAW_POLY = `
+maths|e|Why was zero such an important invention?|Trace how different cultures handled "nothing" and why a symbol for zero changed mathematics.|history of zero, Brahmagupta, Babylonian placeholder zero
+maths|e|What is the golden ratio, and does it really appear everywhere?|Explore where the golden ratio genuinely appears in nature and art, and where the claims are exaggerated.|golden ratio myths, Fibonacci sequence in nature, phyllotaxis
+maths|e|Who was Ada Lovelace, and why is she remembered?|Research her notes on Babbage's Analytical Engine and her ideas about what machines could do.|Ada Lovelace notes, Analytical Engine, Charles Babbage
+maths|e|How does compound interest work, and why does it matter?|Show how small amounts grow over time, and what that means for saving and for debt.|compound interest examples, rule of 72, credit card interest
+maths|m|Is mathematics discovered or invented?|Compare the view that numbers exist independently with the view that maths is a human creation.|mathematical Platonism, formalism, unreasonable effectiveness of mathematics
+maths|m|How does probability fool us?|Investigate famous probability puzzles and why our intuition gets them wrong.|Monty Hall problem, birthday paradox, base rate fallacy
+maths|m|What does infinity mean in mathematics?|Explore how some infinities are bigger than others.|Cantor diagonal argument, countable and uncountable infinity, Hilbert's hotel
+maths|m|How does encryption keep your messages secret?|Explore the prime-number maths behind online security.|RSA encryption, prime factorisation, public key cryptography
+maths|m|How can statistics mislead?|Explore common ways that graphs and numbers distort the truth.|misleading graphs, Simpson's paradox, How to Lie with Statistics
+maths|m|How did ancient mathematicians measure the Earth?|Research how Eratosthenes estimated the Earth's size using shadows.|Eratosthenes circumference of Earth, ancient Greek mathematics
+maths|h|What did Gödel's incompleteness theorems show?|Explain why some true statements can never be proven within a mathematical system.|Gödel incompleteness theorems, Hilbert's program, limits of formal systems
+maths|h|Why are prime numbers still so mysterious?|Look at unsolved problems about primes and why they matter.|Riemann hypothesis, twin prime conjecture, distribution of primes
+maths|h|What is chaos theory?|Explore how tiny changes can lead to huge, unpredictable effects.|butterfly effect Lorenz, deterministic chaos, sensitive dependence on initial conditions
+maths|h|What is game theory, and how does it explain cooperation?|Explore strategic decision-making and where game theory is used in the real world.|prisoner's dilemma, Nash equilibrium, Axelrod evolution of cooperation
+science|e|Why is the sky blue?|Explain how sunlight interacts with the atmosphere, and why sunsets are red.|Rayleigh scattering, why sunsets are red
+science|e|Why does ice float?|Explain the unusual properties of water and why they matter for life on Earth.|density of ice, hydrogen bonding, anomalous properties of water
+science|e|How do batteries store energy?|Explain the chemistry of batteries and why lithium has become so important.|how lithium-ion batteries work, battery chemistry, lithium mining
+science|m|What is quantum entanglement?|Explore what Einstein called "spooky action at a distance" and what experiments have shown.|quantum entanglement explained, Bell's theorem, 2022 Nobel Prize in Physics
+science|m|How did Marie Curie change science?|Research her discoveries in radioactivity and the obstacles she faced.|Marie Curie radioactivity, polonium and radium, Curie Nobel Prizes
+science|m|What is entropy, and why does time seem to move forward?|Explore the second law of thermodynamics and the arrow of time.|second law of thermodynamics, entropy explained, arrow of time
+science|m|How did Einstein change our understanding of time?|Explore special and general relativity and their everyday effects, such as on GPS.|time dilation, GPS and relativity, general relativity explained
+science|m|What is the periodic table really telling us?|Explore how Mendeleev organised the elements and predicted ones not yet discovered.|Mendeleev periodic table, predicted elements, electron shells
+science|h|What is dark matter, and how do we know it exists?|Investigate the evidence from galaxy rotation and gravitational lensing.|dark matter evidence, galaxy rotation curves, Vera Rubin
+science|h|Can nuclear fusion solve our energy problems?|Research how fusion works and how close we are to using it for power.|nuclear fusion progress, ITER, National Ignition Facility
+science|h|Could we ever travel faster than light?|Investigate what relativity allows and the theoretical loopholes physicists discuss.|faster than light travel, Alcubierre drive, causality paradoxes
+life|e|How do vaccines work?|Explain how vaccines train the immune system, including newer mRNA vaccines.|how vaccines work, mRNA vaccines, herd immunity
+life|e|Why do we sleep?|Investigate what happens in the brain and body during sleep, and why teenagers sleep differently.|why we sleep research, sleep and memory, teenage sleep patterns
+life|e|How does the gut microbiome affect our health?|Explore the trillions of microbes living inside us and what they do.|gut microbiome health, gut-brain axis, probiotics evidence
+life|e|Why is Australia's wildlife so unusual?|Explore marsupials, monotremes and how long isolation shaped evolution.|Australian marsupial evolution, platypus monotremes, Gondwana
+life|m|How do antibiotics work, and why are they becoming less effective?|Explore antibiotic resistance and why it is a global health threat.|antibiotic resistance, superbugs, Alexander Fleming penicillin
+life|m|How does evolution by natural selection work?|Explain Darwin's theory and the evidence that supports it.|natural selection explained, Darwin's finches, evidence for evolution
+life|m|What makes us human, genetically?|Compare human DNA with other species and explore what makes us different.|human and chimpanzee DNA, Human Genome Project, Neanderthal DNA
+life|m|How did the Black Death change the world?|Research the plague's causes and its long-term social and economic effects.|Black Death Yersinia pestis, effects of the Black Death, medieval plague
+life|m|How do bees and other pollinators keep us fed?|Explore pollination and the threats facing pollinators.|pollinator decline, colony collapse disorder, crop pollination
+life|m|How did smallpox become the only human disease ever eradicated?|Research the history of vaccination and the global eradication campaign.|smallpox eradication, Edward Jenner, WHO smallpox campaign
+life|h|What is CRISPR, and should we use it?|Explore how gene editing works and weigh its benefits and risks.|CRISPR explained, gene therapy, germline editing ethics
+life|h|What causes ageing, and can it be slowed?|Investigate the biology of ageing and current research into slowing it.|biology of ageing, telomeres, cellular senescence
+earth|e|What causes the seasons?|Explain the tilt of the Earth and correct the common misconception about distance from the Sun.|cause of seasons, Earth's axial tilt, seasons misconception
+earth|e|What would it take for humans to live on Mars?|Explore the challenges of radiation, food, air and distance.|living on Mars challenges, Mars habitat, terraforming
+earth|e|How is climate change affecting Australia?|Investigate droughts, bushfires, reef bleaching and sea level rise.|climate change Australia impacts, CSIRO State of the Climate, Great Barrier Reef bleaching
+earth|e|Why are coral reefs important?|Explore the ecology of reefs and the threats they face.|coral reef ecosystems, coral bleaching, Great Barrier Reef
+earth|m|Are we alone in the universe?|Explore the Drake equation, the Fermi paradox and the search for life on other planets.|Fermi paradox, Drake equation, habitable exoplanets
+earth|m|How do we know the age of the universe?|Explore the Big Bang theory and the cosmic microwave background.|age of the universe, cosmic microwave background, Hubble constant
+earth|m|How do plate tectonics shape the planet?|Explain continental drift, earthquakes and volcanoes.|plate tectonics, Alfred Wegener, Pacific Ring of Fire
+earth|m|What did the Apollo missions achieve?|Research the Moon landings and their scientific and political legacy.|Apollo 11, space race, Apollo lunar samples
+earth|h|What are black holes?|Explore how black holes form and what we have learned from imaging them.|black holes explained, Event Horizon Telescope, Hawking radiation
+earth|h|Could geoengineering fix climate change?|Explore proposals like reflecting sunlight or removing carbon, and their risks.|solar geoengineering, carbon dioxide removal, geoengineering risks
+history|e|What can we learn from the world's oldest continuing cultures?|Explore Aboriginal and Torres Strait Islander histories reaching back tens of thousands of years, using First Nations sources.|Aboriginal history 65000 years, Budj Bim, Torres Strait Islander history
+history|e|What was the Silk Road?|Explore the trade routes connecting Asia, the Middle East and Europe.|Silk Road trade, cultural exchange, Marco Polo
+history|e|What was life like in ancient Egypt?|Explore daily life and religion, and how historians know about them.|ancient Egypt daily life, Rosetta Stone hieroglyphs, pyramid builders
+history|e|How and why were the pyramids built?|Investigate the methods and purposes behind the Egyptian pyramids.|Great Pyramid of Giza construction, pyramid workers, Old Kingdom Egypt
+history|m|Why did the Roman Empire fall?|Compare the many explanations historians have offered.|fall of the Western Roman Empire causes, Edward Gibbon, late antiquity
+history|m|How did the printing press change the world?|Explore Gutenberg's invention and its effects on religion, science and politics.|Gutenberg printing press, Reformation and printing, spread of literacy
+history|m|What was the Industrial Revolution, and who benefited?|Explore how industrialisation changed work, cities and inequality.|Industrial Revolution effects, child labour, factory system
+history|m|How did women win the vote in Australia?|Research the suffrage movement, including South Australia's role in 1894.|women's suffrage South Australia 1894, Catherine Helen Spence, suffrage Australia
+history|m|What was the 1967 referendum, and why does it matter?|Research the vote that changed how the Constitution referred to Aboriginal people.|1967 referendum Australia, Faith Bandler, constitutional change
+history|m|What was the Renaissance?|Explore the revival of art, science and learning in Europe.|Italian Renaissance, Leonardo da Vinci, Renaissance humanism
+history|h|What caused World War I?|Investigate alliances, nationalism and the assassination that sparked the war.|causes of World War I, Franz Ferdinand assassination, July Crisis
+history|h|What were the causes and consequences of the Cold War?|Explore the rivalry between the USA and USSR and its global effects.|Cold War causes, Cuban missile crisis, nuclear arms race
+history|h|How did the French Revolution shape modern politics?|Explore its ideas of liberty and equality and its turn to violence.|French Revolution ideas, Reign of Terror, Declaration of the Rights of Man
+history|h|How did colonisation shape the modern world?|Explore the effects of European empires on colonised peoples and today's world.|European colonialism effects, decolonisation, legacy of empire
+politics|e|How does the Australian Parliament make laws?|Explain the steps a bill takes to become law.|how a bill becomes law Australia, House of Representatives and Senate, Parliamentary Education Office
+politics|e|What are human rights, and where do they come from?|Explore the Universal Declaration of Human Rights and its history.|Universal Declaration of Human Rights, Eleanor Roosevelt, natural rights
+politics|m|What is the separation of powers?|Explore why power is split between parliament, government and the courts.|separation of powers Australia, Montesquieu, judicial independence
+politics|m|Why does Australia use preferential voting?|Explain how preferences work and compare them with first-past-the-post.|preferential voting explained, Australian Electoral Commission, first past the post
+politics|m|Should Australia become a republic?|Research the 1999 referendum and the main arguments on each side.|1999 republic referendum, constitutional monarchy, republic models
+politics|m|How do juries work, and are they fair?|Explore the history of trial by jury and its strengths and weaknesses.|jury system Australia, jury bias research, history of trial by jury
+politics|m|Is compulsory voting good for democracy?|Look at Australia's system, turnout and arguments about freedom.|compulsory voting Australia history, voter turnout, compulsory voting arguments
+politics|h|How does the United Nations work, and is it effective?|Explore the Security Council, veto power and peacekeeping.|UN Security Council veto, UN peacekeeping effectiveness, UN reform
+politics|h|What is international law, and can it be enforced?|Explore treaties, international courts and the problem of enforcement.|International Court of Justice, International Criminal Court, enforcement of international law
+politics|h|How should First Peoples be recognised in Australia's constitution and law?|Research the main proposals and arguments, including the 2023 referendum and treaty processes.|Uluru Statement from the Heart, 2023 Voice referendum, treaty South Australia
+econ|e|What causes inflation?|Explain why prices rise and what central banks do about it.|causes of inflation, Reserve Bank of Australia interest rates, cost of living
+econ|e|How do businesses use psychology to sell to us?|Explore advertising, pricing tricks and persuasion.|pricing psychology, behavioural economics marketing, nudge theory
+econ|e|Why is housing so expensive?|Explore the factors behind housing affordability in Australia.|housing affordability Australia, housing supply, negative gearing
+econ|m|Why are some countries rich and others poor?|Compare explanations based on geography, institutions and history.|Why Nations Fail, Guns Germs and Steel, economic development
+econ|m|How do supply and demand set prices?|Explain the basic model and where it breaks down in the real world.|supply and demand explained, price elasticity, market equilibrium
+econ|m|What is behavioural economics?|Explore how real people differ from the perfectly rational decision-maker of classic economics.|behavioural economics Kahneman, Richard Thaler nudge, bounded rationality
+econ|h|What caused the 2008 global financial crisis?|Investigate housing, banking and how the crisis spread around the world.|2008 financial crisis causes, subprime mortgages, Lehman Brothers
+econ|h|Can economic growth go hand in hand with protecting the environment?|Compare green growth with degrowth arguments.|green growth vs degrowth, decoupling emissions, Doughnut Economics
+arts|e|Why do humans tell stories?|Explore storytelling across cultures and its role in survival and identity.|evolution of storytelling, oral tradition, narrative psychology
+arts|e|How does music affect the brain?|Explore why music moves us and how it affects memory and mood.|music and the brain, music therapy, why music gives you chills
+arts|e|How do films use colour and music to make us feel things?|Explore the techniques filmmakers use to shape emotion.|colour in film, film scores and emotion, cinematography techniques
+arts|m|Why is Shakespeare still studied today?|Explore his influence on language, theatre and storytelling.|Shakespeare influence on English, Shakespeare's legacy, Globe Theatre
+arts|m|What can ancient rock and cave art tell us about early humans?|Explore the world's oldest art, including rock art in Australia and Indonesia.|oldest cave art Sulawesi, Australian rock art, Lascaux cave paintings
+arts|m|How did photography change art?|Explore how the camera pushed painters toward new styles.|photography and Impressionism, history of photography, art after the camera
+arts|h|What makes a novel great?|Compare ideas about literary value and who decides what counts as a classic.|literary canon debate, what makes a classic, literary criticism
+arts|h|Who owns culture? Museums and the return of artefacts|Explore debates about returning cultural objects to their places of origin.|repatriation of artefacts, Parthenon Marbles, repatriation of Aboriginal cultural heritage
+tech|e|How does the internet actually work?|Explain how data travels across the world in fractions of a second.|how the internet works, undersea cables, packet switching
+tech|e|How do algorithms decide what we see online?|Explore recommendation systems and their effects on what we think.|recommendation algorithms, filter bubbles, social media algorithms
+tech|m|How do AI chatbots work?|Explore how large language models learn to predict text, and their limits.|how large language models work, neural networks explained, AI hallucination
+tech|m|Who was Alan Turing, and what was his impact?|Research his codebreaking work and his ideas about computing and AI.|Alan Turing Enigma, Turing machine, Turing test
+tech|m|What is cybersecurity, and why does it matter?|Explore common cyber threats and how they are defended against.|cybersecurity basics, ransomware attacks, phishing
+tech|h|What is quantum computing?|Explore how quantum computers differ from ordinary ones and what they might do.|quantum computing explained, qubits, quantum advantage
+tech|h|Can we trust self-driving cars?|Explore the technology, the safety record and the remaining challenges.|autonomous vehicle safety, levels of driving automation, self-driving car accidents
+tech|h|Who is responsible when an algorithm discriminates?|Look at real cases of algorithmic bias and the question of accountability.|algorithmic bias COMPAS, AI accountability, fairness in machine learning
+mind|e|How does memory work?|Explore how we form, store and lose memories.|how memory works, hippocampus, Ebbinghaus forgetting curve
+mind|e|What makes habits so hard to break?|Explore the psychology and neuroscience of habits.|habit formation research, habit loop, dopamine and habits
+mind|m|What can brain injuries teach us about the mind?|Explore famous cases like Phineas Gage and patient H.M.|Phineas Gage, patient H.M., neuroplasticity
+mind|m|Why do people conform?|Explore classic experiments on social influence and what they show.|Asch conformity experiments, Milgram obedience, social influence
+mind|m|How do languages develop and die?|Explore language change, endangered languages and revival efforts, including in Australia.|endangered languages, Aboriginal language revival, language change
+mind|h|Is intelligence mostly genetic?|Explore twin studies and the nature-nurture debate.|heritability of intelligence, twin studies, Flynn effect
+philo|e|What can the Stoics teach us about dealing with adversity?|Research Stoic practices and their link to modern therapy.|Epictetus dichotomy of control, Marcus Aurelius Meditations, Stoicism and CBT
+philo|e|Is it ethical to keep animals in zoos?|Weigh conservation and education against animal welfare and the harms of captivity.|zoo conservation programs, animal welfare science, Peter Singer
+philo|e|Does social media make young people less happy?|Investigate the evidence and the debate between researchers.|Jonathan Haidt The Anxious Generation, social media wellbeing research, Australia social media minimum age
+philo|m|Do we have free will?|Look at neuroscience experiments and philosophical responses to them.|Libet experiment, compatibilism, neuroscience and free will
+philo|m|Could an AI ever be conscious?|Investigate the hard problem, functionalism and the Chinese room.|hard problem of consciousness, Chinese room Searle, AI consciousness debate
+philo|m|Should people have the right to choose when they die?|Research voluntary assisted dying laws and the main arguments for and against them.|voluntary assisted dying South Australia, autonomy, sanctity of life
+philo|m|What can we learn from Aboriginal philosophies of Country and relationship?|Explore caring for Country, kinship and deep listening, prioritising Aboriginal-authored sources.|Dadirri Miriam-Rose Ungunmerr-Baumann, Tyson Yunkaporta Sand Talk, caring for Country
+philo|m|What did Hannah Arendt mean by the banality of evil?|Research the Eichmann trial and the debate her idea started.|Eichmann in Jerusalem, banality of evil, Arendt thoughtlessness
+philo|m|What can Robodebt teach us about automated decision-making?|Research what went wrong and what it shows about accountability.|Robodebt Royal Commission, automated decision-making government, algorithmic accountability
+philo|h|Is science objective?|Compare Popper's and Kuhn's views of how science works.|Popper falsifiability, Kuhn paradigm shift, values in science
+philo|h|What makes a government legitimate?|Compare social contract theories and the idea of consent of the governed.|social contract Hobbes Locke Rousseau, political legitimacy, consent of the governed
+philo|h|Do we have moral duties to future generations?|Explore intergenerational justice and Parfit's non-identity problem.|intergenerational justice, non-identity problem Parfit, climate ethics
+`;
+
+const parse = (raw, fn) => raw.trim().split("\n").map((l,i)=>fn(l.split("|").map(s=>s.trim()),i));
+const ANGLES = [
+  "Argue for it.","Argue against it.","Decide whether it is true, false or partly true, and defend your call.",
+  "Give the strongest objection, then respond to it.","Explain it simply, then take a side.",
+  "Apply it to life at school.","Connect it to a current issue in the news.","Use a thought experiment as your example.",
+  "Argue it matters more than most people think.","Argue it matters less than most people think.",
+  "Take the side of a philosopher who would disagree with you.","Use an example from your own everyday life.",
+  "Judge it as an argument: is it a good one or a bad one?","Apply it to a piece of technology you use every day.",
+  "Argue the opposite of your first instinct."
+];
+const RALLY_ANGLES = [
+  "Open with a short personal story.","Use the rule of three somewhere in your speech.","Open with a rhetorical question.",
+  "Name the fear in the room, then answer it.","Build to one memorable final line.","Use a quote or idea from a philosopher.",
+  "Paint a picture of what success will look like.","Speak as if to one person, not a crowd.","Use a pause for effect before your final point.",
+  "End with a clear call to action."
+];
+const GUIDE = {
+  PREP:{intro:"PREP gives a short speech a clear shape: say where you stand, why, prove it, then land it. In a one-minute speech, aim for roughly 10 seconds of Point, 20 of Reason, 20 of Example and 10 of Point.",
+    sample:"Is honesty always the best policy?",
+    parts:[
+      {what:"Your answer in one clear sentence. Within ten seconds, the listener should know where you stand.",
+       tips:["Take a side, even a qualified one.","Skip \"Today I'm going to talk about…\". Start with the claim itself.","Make it specific enough that someone could disagree."],
+       starters:["I believe that…","My position is that…","The short answer is…, and here's why."],
+       eg:"Honesty is almost always the best policy, but not always: there are rare cases where a lie protects someone from serious harm."},
+      {what:"The why behind your point: your main premise. One strong reason beats three weak ones.",
+       tips:["Link it to your point with \"because\".","Name the principle, theory or philosopher if you can.","Ask yourself: would this convince a sceptic?"],
+       starters:["This is because…","The main reason is…","If we accept that…, then…"],
+       eg:"This is because we value honesty for the trust it builds, and trust matters because it protects people. When a lie is the only way to protect someone, that same value points the other way."},
+      {what:"Concrete proof that makes the reason real: a case, statistic, story, analogy or thought experiment.",
+       tips:["Be specific: names, places, numbers.","Explain how it proves your reason. Don't just mention it.","In philosophy, a thought experiment counts as evidence."],
+       starters:["For example…","Take the case of…","Imagine that…","This is like…"],
+       eg:"Take Kant's murderer at the door. A killer asks where your friend is hiding. Kant said you still must not lie, but most people think lying here is clearly right, which shows that honesty has limits."},
+      {what:"Return to your position and show how the reason and example have proved it. This makes the speech feel finished.",
+       tips:["Don't repeat your opening word for word. Add the \"so what\".","Signal clearly that you are finishing.","If there's time, answer an objection in one line."],
+       starters:["So…","That's why I believe…","In the end…"],
+       eg:"So honesty should be our default, and we need a very strong reason to break it. Protecting someone from serious harm is exactly that kind of reason."}
+    ]},
+  STAR:{intro:"STAR turns a \"Tell me about a time…\" question into a clear story with evidence. Spend the most time on Action, because that is where you show your skills.",
+    sample:"Tell me about a time you worked in a team.",
+    parts:[
+      {what:"Set the scene briefly: when, where and who. Give just enough context.",
+       tips:["Keep it to one or two sentences.","Choose a recent example that is relevant to the opportunity."],
+       starters:["Last year, in…","While I was…","In Year 10, I…"],
+       eg:"In Year 10, I was in a group of four building a solar car for a STEM competition."},
+      {what:"Your specific goal or responsibility, and what made it challenging.",
+       tips:["Make your own role clear.","Name the problem or the pressure."],
+       starters:["My role was to…","The challenge was…","I needed to…"],
+       eg:"I was responsible for the wiring, and two weeks before the deadline our motor stopped working."},
+      {what:"What you did, step by step. This should be the longest part.",
+       tips:["Say \"I\", not \"we\".","Explain why you chose each step.","Show the skills the interviewer is looking for."],
+       starters:["First, I…","Then I decided to…","I made sure that…"],
+       eg:"I tested each connection to find the fault, asked our teacher for a spare part, and set up a shared checklist so the whole team could track what was left."},
+      {what:"The outcome and what you learned from it.",
+       tips:["Use a number or concrete outcome if you can.","Finish with a lesson you would apply again."],
+       starters:["As a result…","In the end…","I learned that…"],
+       eg:"We finished on time and placed third, and I learned that breaking a problem into steps works far better than panicking."}
+    ]}
+};
+const VOCAB_CHALLENGES = [
+  "Use \"{w}\" correctly in a talk on: {t}.",
+  "Define \"{w}\" in your own words, then give an everyday example of it.",
+  "Argue for or against this, using \"{w}\" at least twice: {t}.",
+  "Tell a short story from your own life that uses \"{w}\".",
+  "Use \"{w}\" to describe a character from a book, film or show.",
+  "Explain why \"{w}\" is a useful word for a philosopher, with an example.",
+  "Use \"{w}\" in a quick argument about whether school should start later."
+];
+const FW = {
+  PREP:{name:"PREP",phases:[
+    {k:"P",name:"Point",hint:"My position in one sentence",ph:"I think that…",cue:"State your position clearly in one sentence.",f:.15,c:"--ph1"},
+    {k:"R",name:"Reason",hint:"Why? My main premise",ph:"This is because…",cue:"Explain why. Give your strongest reason or premise.",f:.30,c:"--ph2"},
+    {k:"E",name:"Example",hint:"Case, evidence or thought experiment",ph:"For example…",cue:"Back it up with a concrete example, case or thought experiment.",f:.35,c:"--ph3"},
+    {k:"P",name:"Point",hint:"Restate and link back",ph:"So, I conclude that…",cue:"Restate your position and link it back to your reason.",f:.20,c:"--ph4"}],
+    checks:["I stated a clear position at the start (Point)","I gave at least one reason that supports it (Reason)","I used a specific example, case or thought experiment (Example)","I restated my point at the end and linked it back (Point)"]},
+  STAR:{name:"STAR",phases:[
+    {k:"S",name:"Situation",hint:"Where, when, who",ph:"In Year 10, our team…",cue:"Set the scene briefly: where, when and who was involved.",f:.20,c:"--ph1"},
+    {k:"T",name:"Task",hint:"My goal or responsibility",ph:"My job was to…",cue:"Explain your goal or what you were responsible for.",f:.15,c:"--ph2"},
+    {k:"A",name:"Action",hint:"What I did, step by step",ph:"First I… then I…",cue:"Describe what you did, step by step. Say \"I\", not \"we\".",f:.40,c:"--ph3"},
+    {k:"R",name:"Result",hint:"Outcome and what I learned",ph:"As a result… I learned…",cue:"Share the outcome and what you learned from it.",f:.25,c:"--ph5"}],
+    checks:["I set the scene briefly (Situation)","I made my goal or responsibility clear (Task)","I explained what I did myself, step by step (Action)","I gave a result and what I learned (Result)"]}
+};
+const MODES = {
+  topics:{label:"Topics",unit:["topic","topics"],noun:"Your topic",study:120,speak:60,studyWord:"Study",speakVerb:"Start speaking",bank:"Topic bank",
+    cats:{ethics:"Ethics",know:"Knowledge",meta:"Reality & existence",mind:"Mind & self",soc:"Society & politics",lang:"Language",psych:"Psychology & bias",thought:"Thought experiments",logic:"Logic & fallacies",mean:"Meaning & art",god:"God & religion",tech:"Tech & future",life:"Everyday questions",schools:"Schools of thought",rally:"Inspiring speeches"},
+    items:parse(RAW_TOPICS,([c,n,b],i)=>({id:"t"+i,c,n,b,fw:"PREP"}))},
+  vocab:{label:"Vocabulary",unit:["word","words"],noun:"Your word",study:30,speak:60,studyWord:"Study",speakVerb:"Start speaking",bank:"Word bank",
+    cats:{logic:"Argument & logic",know:"Knowledge & evidence",ethics:"Ethics & values",meta:"Reality & mind",rhet:"Rhetoric & speaking",acad:"Academic words"},
+    items:parse(RAW_VOCAB,([c,n,pos,b,ex],i)=>({id:"v"+i,c,n,pos,b,ex,fw:"PREP"}))},
+  interview:{label:"Interview prep",unit:["question","questions"],noun:"Your question",study:60,speak:90,studyWord:"Prepare",speakVerb:"Start answering",bank:"Question bank",
+    cats:{about:"About you",motive:"Motivation & goals",behav:"Behavioural",values:"Values & ethics",study:"School & learning",think:"Problem solving",curve:"Curveballs"},
+    items:parse(RAW_INTERVIEW,([c,n,tip,f],i)=>({id:"i"+i,c,n,tip,fw:f==="S"?"STAR":"PREP"}))},
+  polymath:{label:"Polymath mode",unit:["question","questions"],noun:"Your research question",study:600,speak:120,studyWord:"Research",speakVerb:"Start presenting",bank:"Polymath bank",
+    cats:{maths:"Maths",science:"Physics & chemistry",life:"Biology & health",earth:"Earth & space",history:"History",politics:"Politics & law",econ:"Economics",arts:"Arts & literature",tech:"Technology",mind:"Mind & behaviour",philo:"Philosophy & ethics"},
+    items:parse(RAW_POLY,([c,d,n,b,search],i)=>({id:"p"+i,c,d,n,b,search,fw:"PREP"}))}
+};
+const DIFF_RULES = {
+  topics:{def:{schools:"m",rally:"e",life:"e",psych:"e",thought:"m",logic:"m",ethics:"m",tech:"m",soc:"m",lang:"m",mean:"m",god:"m",know:"h",meta:"h",mind:"h"},
+    e:["The trolley problem","Ship of Theseus","Is a hot dog a sandwich?","Occam's razor","Ad hominem","Straw man","Slippery slope","Bandwagon fallacy","Red herring","False dilemma","The golden rule","Animal rights","Freedom of speech","Can you think without words?","Are emojis a language?","What's in a name?","Is beauty in the eye of the beholder?","What is art?","What is happiness?","Memento mori","Stoicism","Can AI be conscious?","Social media and wellbeing","Smartphones and attention","Compulsory voting","Should voting age be 16?","Can we trust our senses?","Intuition","Trusting experts","Misinformation","Conspiracy theories","Forgiveness","Altruism","Justice vs revenge","Loyalty vs honesty","Brain in a vat","The experience machine","The ring of Gyges","The grandfather paradox","The simulation hypothesis","Can personality change?","Reason vs emotion","Wisdom vs knowledge","Common sense","Intellectual humility","Correlation vs causation","Hasty generalisation","Stoicism","Minimalism","Mindfulness","The dichotomy of control","The view from above","Stoicism today","Hedonism"],
+    m:["Cogito ergo sum","Certainty","Solipsism","The nature of time","What is truth?","Is mathematics invented or discovered?","Randomness","Change and identity","Personal identity over time","Plato's theory of Forms","Rationalism","Empiricism","Tabula rasa","Descartes' evil demon","Peer disagreement","Memory as evidence","Can you choose what you believe?","Science as knowledge","Socratic ignorance","Faith vs reason","Knowledge of the future","The problem of other minds","What is a person?","The mind-body problem","Animal minds","Split-brain cases","Memory and identity","Authenticity","Introspection","Unconscious mind","Is the self an illusion?","Are you your body?","Holes and shadows","Nothingness","Fiction and existence","Infinity","When do parts make a whole?","Why is there something rather than nothing?","Free will vs determinism","Fatalism","Cognitive dissonance","Learned helplessness","Fundamental attribution error","Moral licensing","Peak-end rule","Survivorship bias","Knowledge as justified true belief","Testimony","Rebuilding together","Stand together","Minutes before launch","We can still act","Your first hires"],
+    h:["The is-ought problem","Doctrine of double effect","Moral realism","Moral luck","Supererogation","Natural law theory","The liar paradox","The barber paradox","The raven paradox","Dialectic","Newcomb's problem","Twin Earth","Swampman","Kavka's toxin puzzle","Mary's room","Inverted spectrum","The fission case","Molyneux's problem","Sense and reference","The private language argument","The beetle in a box","Speech acts","Language games","Alienation","The panopticon","Social construction","The paradox of tolerance","Distributive justice","Bad faith","Eternal recurrence","The sublime","Standards of taste","The paradox of fiction","The ontological argument","Divine foreknowledge and free will","Spinoza's God","Postmodernism","Pyrrhonian scepticism"]},
+  vocab:{def:{rhet:"e",acad:"m",logic:"m",know:"m",ethics:"m",meta:"h"},
+    e:["Premise","Conclusion","Fallacy","Analogy","Hypothesis","Assumption","Contradiction","Bias","Objective","Subjective","Credible","Verify","Virtue","Altruism","Integrity","Hypocrisy","Empathy","Apathy","Resilience","Inevitable","Profound","Consciousness","Perception","Abstract","Concrete","Mortality","Sentient","Rebuttal","Counterexample","Paradox","Generalisation","Pragmatic","Impartial"],
+    m:["Agency","Determinism","Introspection","Existential","Ephemeral","Phenomenon","Essence","Inherent","Absurd","Materialism","Rhetorical question","Connotation","Nuance","Substantiate","Refute"],
+    h:["Sophistry","Polemic","Syllogism","Tautology","Non sequitur","Equivocation","Axiom","Necessary condition","Sufficient condition","Reductio ad absurdum","Corollary","Cogent","Sound","Epistemology","A priori","A posteriori","Justification","Heuristic","Paradigm","Consequentialism","Deontology","Normative","Culpable","Sanctity","Paternalism","Esoteric","Zeitgeist","Anachronism","Juxtapose","Salient","Paradigm shift"]},
+  interview:{def:{about:"e",motive:"e",study:"e",behav:"m",values:"m",think:"h",curve:"m"},
+    e:["Tell me about yourself.","If you were an animal, which would you be and why?","What would you do with an extra hour each day?","Do you have any questions for us?"],
+    m:["What is a weakness you are working on?","What makes you different from other applicants?","Where do you see yourself in five years?","What do you know about our organisation?","How would you explain a complex idea to a young child?","How do you make a difficult decision?","What skills has philosophy given you?","What would you change about your school, and why?","How would you handle two important tasks due at the same time?"],
+    h:["Tell me about a time you failed.","Describe a time you dealt with conflict.","Describe a time you stood up for something you believed in.","What would you do if you saw a colleague doing something dishonest?","How would you handle being asked to do something you think is wrong?","Is honesty always the best policy at work?","Convince me to agree with an unpopular opinion you hold.","Sell me this pen.","What is the most important problem facing your generation?"]}
+};
+Object.entries(DIFF_RULES).forEach(([m,r])=>{
+  const over={}; ["e","m","h"].forEach(k=>r[k].forEach(n=>{over[n]=k;}));
+  MODES[m].items.forEach(t=>{t.d=over[t.n]||r.def[t.c]||"m";});
+});
+const DIFF_NAMES={e:"Easy",m:"Medium",h:"Hard"};
+const MODE_KEYS = Object.keys(MODES);
+const X_KEYS=["difficulty","summary","angle","guide","study","planner","speak","selfcheck","areas","norepeat","bank","sound","fullscreen"];
+
+const $ = s => document.querySelector(s);
+const store = {
+  get(k,d){try{const v=localStorage.getItem("agora:"+k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+  set(k,v){try{localStorage.setItem("agora:"+k,JSON.stringify(v));}catch(e){}}
+};
+const savedX = store.get("extras2",{});
+const x = {}; X_KEYS.forEach(k=>{x[k]=savedX[k]===true;});
+const used = new Set(store.get("used3",[]));
+const ms = {};
+MODE_KEYS.forEach(m=>{
+  const M=MODES[m], ck=Object.keys(M.cats);
+  const sc=store.get("cats:"+m,ck).filter(k=>M.cats[k]);
+  const d=store.get("dur:"+m,{});
+  ms[m]={strip:[],pos:0,current:null,won:false,cats:new Set(sc.length?sc:ck),study:d.study||M.study,speak:d.speak||M.speak};
+});
+let hashMode=(location.hash||"").replace("#",""); if(hashMode==="research") hashMode="polymath";
+let diff=store.get("diff","all"); if(!["all","e","m","h"].includes(diff)) diff="all";
+let mode = MODES[hashMode]?hashMode:(MODES[store.get("mode","topics")]?store.get("mode","topics"):"topics");
+const S = () => ms[mode];
+const M = () => MODES[mode];
+let angle="";
+
+const shuffle = a => {a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const fmt = s => {s=Math.max(0,Math.ceil(s));return Math.floor(s/60)+":"+String(s%60).padStart(2,"0");};
+const fmtLong = s => s>=60?(s%60?fmt(s):(s/60)+" min"):s+" sec";
+const reduceMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+const el = (tag,cls,text) => {const e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e;};
+let toastT; function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("show"),3200);}
+
+/* sound */
+let ac=null;
+function audio(){if(!x.sound) return null; if(!ac){try{ac=new (window.AudioContext||window.webkitAudioContext)();}catch(e){ac=null;}} if(ac&&ac.state==="suspended"){ac.resume().catch(()=>{});} return ac;}
+function tone(freq,dur,type="sine",vol=.12,delay=0){
+  const a=audio(); if(!a) return;
+  try{const t=a.currentTime+delay,o=a.createOscillator(),g=a.createGain();o.type=type;o.frequency.value=freq;
+  g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+  o.connect(g);g.connect(a.destination);o.start(t);o.stop(t+dur+.02);}catch(e){}
+}
+const tick=()=>tone(1500,.025,"square",.025);
+const chime=()=>{tone(660,.35);tone(990,.5,"sine",.1,.12);};
+const phaseBeep=()=>tone(880,.18,"triangle",.12);
+const endGong=()=>{tone(523,.7,"sine",.14);tone(392,.9,"sine",.12,.2);};
+
+let wake=null;
+async function holdAwake(){try{if("wakeLock" in navigator&&!wake){wake=await navigator.wakeLock.request("screen");wake.addEventListener("release",()=>{wake=null;});}}catch(e){wake=null;}}
+function releaseAwake(){try{wake&&wake.release();}catch(e){} wake=null;}
+
+/* pools */
+function inAreas(){let items=M().items; if(x.areas) items=items.filter(t=>S().cats.has(t.c)); if(x.difficulty&&diff!=="all") items=items.filter(t=>t.d===diff); return items;}
+function drawPool(){
+  const base=inAreas(); if(!x.norepeat) return base;
+  let f=base.filter(t=>!used.has(t.id));
+  if(!f.length&&base.length){base.forEach(t=>used.delete(t.id));store.set("used3",[...used]);toast("Everything in this list has been drawn. Starting fresh.");f=base;}
+  return f;
+}
+function updatePoolLine(){
+  const base=inAreas(), u=M().unit, nc=Object.keys(M().cats).length; let txt;
+  if(!base.length) txt="Nothing matches these settings.";
+  else {txt=base.length+" "+(base.length===1?u[0]:u[1]); if(x.difficulty&&diff!=="all") txt+=" · "+DIFF_NAMES[diff].toLowerCase(); if(x.areas&&S().cats.size<nc) txt+=" in "+S().cats.size+" categor"+(S().cats.size===1?"y":"ies");
+    if(x.norepeat){const n=base.filter(t=>used.has(t.id)).length; if(n) txt+=" · "+n+" already drawn";}}
+  $("#poolLine").textContent=txt;
+}
+
+/* reel */
+const reel=$("#reel"), rowsBox=$("#rows");
+const ROWS=13, HALF=6; const rows=[];
+for(let j=0;j<ROWS;j++){const r=el("div","row");const sp=el("span");r.appendChild(sp);rowsBox.appendChild(r);rows.push({el:r,sp,id:""});}
+let spinning=false, rowH=58;
+const mod=(i,n)=>((i%n)+n)%n;
+function buildStrip(){
+  const s=S(), base=inAreas(); s.strip=[];
+  if(base.length){while(s.strip.length<60) s.strip=s.strip.concat(shuffle(base));}
+  s.pos=0; s.won=false; reel.classList.remove("won"); render();
+}
+function measure(){rowH=parseFloat(getComputedStyle(reel).getPropertyValue("--row"))||58;render();}
+function render(){
+  const s=S(), empty=!s.strip.length; $("#reelEmpty").hidden=!empty;
+  if(empty){rows.forEach(r=>{r.el.style.opacity=0;});return;}
+  const base=Math.round(s.pos);
+  rows.forEach((r,j)=>{
+    const i=base+(j-HALF), d=i-s.pos, t=s.strip[mod(i,s.strip.length)];
+    if(r.id!==t.id){r.sp.textContent=t.n;r.id=t.id;}
+    const ad=Math.abs(d);
+    r.el.style.transform="translateY("+(-d*rowH)+"px) rotateX("+(d*15)+"deg) scale("+(1-Math.min(ad,5)*.035)+")";
+    r.el.style.opacity=Math.max(0,1-ad*.17);
+    r.el.classList.toggle("center",ad<.5);
+  });
+}
+function setTabsDisabled(v){document.querySelectorAll(".tab").forEach(b=>{b.disabled=v;});}
+function spin(){
+  if(spinning) return;
+  const s=S(), cand=drawPool();
+  if(!s.strip.length||!cand.length){toast("Nothing matches these settings. Try another difficulty or category.");return;}
+  audio(); stopAllTimers();
+  let winner=cand[Math.floor(Math.random()*cand.length)];
+  if(s.current&&winner.id===s.current.id&&cand.length>1){winner=cand.find(t=>t.id!==s.current.id);}
+  const rm=reduceMotion(), dist=rm?8:36+Math.floor(Math.random()*14);
+  const start=s.pos, target=Math.round(s.pos)+dist; s.strip[mod(target,s.strip.length)]=winner;
+  const dur=rm?700:3800+Math.random()*800;
+  spinning=true; s.won=false; reel.classList.remove("won"); $("#spinBtn").disabled=true; setTabsDisabled(true);
+  hideCards();
+  const t0=performance.now(); let last=Math.round(start);
+  (function frame(now){
+    const k=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-k,4);
+    s.pos=start+(target-start)*e; render();
+    const r=Math.round(s.pos); if(r!==last){last=r;tick();}
+    if(k<1) requestAnimationFrame(frame); else {s.pos=target;render();land(winner);}
+  })(t0);
+}
+function land(t){spinning=false;$("#spinBtn").disabled=false;setTabsDisabled(false);S().won=true;reel.classList.add("won");chime();showItem(t);}
+function pickDirect(t){
+  const s=S(); if(spinning||!s.strip.length) return;
+  s.pos=Math.round(s.pos); s.strip[mod(s.pos,s.strip.length)]=t; render();
+  s.won=true; reel.classList.add("won"); stopAllTimers(); showItem(t);
+  reel.scrollIntoView({behavior:reduceMotion()?"auto":"smooth",block:"start"});
+}
+function hideCards(){["resultCard","speakCard","doneCard"].forEach(id=>{$("#"+id).hidden=true;});}
+
+/* result */
+function link(text,href){const a=el("a",null,text);a.href=href;a.target="_blank";a.rel="noopener";return a;}
+function renderSummary(t){
+  const box=$("#xSummary"); box.innerHTML="";
+  box.appendChild(el("span","cat-chip",M().cats[t.c]));
+  const links=[];
+  if(mode==="topics"){
+    box.appendChild(el("p","blurb",t.b));
+    links.push(["Wikipedia","https://en.wikipedia.org/w/index.php?search="+encodeURIComponent(t.n)],["Stanford Encyclopedia of Philosophy","https://plato.stanford.edu/search/searcher.py?query="+encodeURIComponent(t.n)]);
+  } else if(mode==="vocab"){
+    const kv=el("div","kv"); kv.append(el("span","label","Example sentence"),el("p","blurb",t.ex)); box.appendChild(kv);
+    links.push(["Wiktionary","https://en.wiktionary.org/wiki/"+encodeURIComponent(t.n.toLowerCase())],["Stanford Encyclopedia of Philosophy","https://plato.stanford.edu/search/searcher.py?query="+encodeURIComponent(t.n)]);
+  } else if(mode==="interview"){
+    const kv=el("div","kv"); kv.append(el("span","label","What they're looking for"),el("p","blurb",t.tip)); box.appendChild(kv);
+    const f=el("p","read-more"); f.append("Suggested structure: "); f.appendChild(el("span","fw-tag",t.fw));
+    f.append(t.fw==="STAR"?" (Situation, Task, Action, Result)":" (Point, Reason, Example, Point)"); box.appendChild(f);
+  } else {
+    box.appendChild(el("p","blurb",t.b));
+    const kv=el("div","kv"); kv.append(el("span","label","Start your search with"),el("p",null,t.search)); box.appendChild(kv);
+    const q=t.search.split(",")[0].trim();
+    links.push(["Wikipedia","https://en.wikipedia.org/w/index.php?search="+encodeURIComponent(q)]);
+    if(t.c==="philo") links.push(["Stanford Encyclopedia of Philosophy","https://plato.stanford.edu/search/searcher.py?query="+encodeURIComponent(q)]);
+    links.push(["Google Scholar","https://scholar.google.com/scholar?q="+encodeURIComponent(q)]);
+  }
+  if(links.length){const p=el("p","read-more","Look it up: ");links.forEach((l,i)=>{if(i)p.append(" · ");p.appendChild(link(l[0],l[1]));});box.appendChild(p);}
+}
+function renderPlanner(t){
+  const f=FW[t.fw], box=$("#planner"); box.innerHTML="";
+  $("#plannerTitle").textContent="Plan with "+f.name;
+  f.phases.forEach((p,i)=>{
+    const w=el("div","pfield"); w.style.setProperty("--c","var("+p.c+")");
+    const lb=el("label"); lb.htmlFor="n"+i; const lab=el("span","lab"); lab.append(el("b",null,p.name),el("span",null,p.hint));
+    lb.append(el("span","badge",p.k),lab);
+    const ta=el("textarea"); ta.id="n"+i; ta.rows=2; ta.placeholder=p.ph;
+    w.append(lb,ta); box.appendChild(w);
+  });
+}
+function renderGuide(t){
+  const g=GUIDE[t.fw], f=FW[t.fw], box=$("#xGuide"); box.innerHTML="";
+  const sum=el("summary"); sum.append(el("span","sub","How "+f.name+" works")); box.appendChild(sum);
+  const body=el("div","guide-body"); body.appendChild(el("p","guide-intro",g.intro));
+  const grid=el("div","guide-grid");
+  f.phases.forEach((p,i)=>{
+    const d=g.parts[i], c=el("div","guide-part"); c.style.setProperty("--c","var("+p.c+")");
+    const h=el("div","guide-head"); h.append(el("span","badge",p.k),el("b",null,p.name)); c.appendChild(h);
+    c.appendChild(el("p",null,d.what));
+    const ul=el("ul","guide-tips"); d.tips.forEach(s=>ul.appendChild(el("li",null,s))); c.appendChild(ul);
+    const st=el("div","kv"); st.append(el("span","label","Sentence starters"),el("p","starters",d.starters.join("  ·  "))); c.appendChild(st);
+    const eg=el("div","kv guide-eg"); eg.append(el("span","label","Example"),el("p",null,d.eg)); c.appendChild(eg);
+    grid.appendChild(c);
+  });
+  body.appendChild(grid);
+  body.appendChild(el("p","read-more","Examples answer: "+g.sample));
+  box.appendChild(body);
+}
+function renderChecklist(t){
+  const ul=$("#checklist"); ul.innerHTML="";
+  const items=FW[t.fw].checks.slice();
+  if(mode==="vocab") items.push("I used the word correctly, at least once");
+  if(mode==="interview") items.push("I answered the question that was actually asked");
+  else items.push("I used at least one philosophical term accurately");
+  if(mode!=="interview") items.push("I acknowledged an objection or another point of view");
+  items.push("I kept going for the whole time without long pauses");
+  items.forEach(s=>{const li=el("li"),lb=el("label"),cb=el("input");cb.type="checkbox";lb.append(cb," "+s);li.appendChild(lb);ul.appendChild(li);});
+  updateScore();
+}
+function newAngle(){
+  const t=S().current; if(!t) return;
+  let a;
+  if(mode==="vocab"){
+    const topics=MODES.topics.items.filter(x=>x.c!=="rally"), tp=topics[Math.floor(Math.random()*topics.length)].n;
+    do{a=VOCAB_CHALLENGES[Math.floor(Math.random()*VOCAB_CHALLENGES.length)];}while(a===angle&&VOCAB_CHALLENGES.length>1);
+    angle=a; $("#angleText").textContent=a.replace("{w}",t.n).replace("{t}",tp);
+  } else {
+    const list=t.c==="rally"?RALLY_ANGLES:ANGLES;
+    do{a=list[Math.floor(Math.random()*list.length)];}while(a===angle&&list.length>1);
+    angle=a; $("#angleText").textContent=a;
+  }
+}
+function showItem(t){
+  const s=S(); s.current=t; used.add(t.id); store.set("used3",[...used]);
+  $("#rLabel").textContent=M().noun; $("#rTitle").textContent=t.n; setDiffPill(t);
+  const core=$("#rCore"); core.innerHTML="";
+  if(mode==="vocab"){core.appendChild(el("span","pos",t.pos));core.append(t.b);core.hidden=false;} else core.hidden=true;
+  $("#live").textContent=M().noun+": "+t.n;
+  renderSummary(t); renderGuide(t); renderPlanner(t); renderChecklist(t); newAngle();
+  $("#toSpeak").classList.remove("pulse");
+  hideCards(); $("#resultCard").hidden=false; applyExtras();
+  if(x.study) startStudy();
+  updatePoolLine(); markBank();
+}
+
+function setDiffPill(t){const p=$("#rDiff");p.textContent=DIFF_NAMES[t.d]||"";p.dataset.d=t.d||"";}
+
+/* difficulty */
+function renderDiff(){document.querySelectorAll("#diffSeg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.d===diff));}
+document.querySelectorAll("#diffSeg button").forEach(b=>b.addEventListener("click",()=>{
+  if(spinning||diff===b.dataset.d) return; diff=b.dataset.d; store.set("diff",diff); renderDiff();
+  MODE_KEYS.forEach(m=>{if(m!==mode) ms[m].strip=[];}); buildStrip(); updatePoolLine();
+}));
+
+/* timers */
+class Timer{
+  constructor(onTick,onEnd){this.onTick=onTick;this.onEnd=onEnd;this.running=false;this.total=0;this.remaining=0;this.id=null;}
+  start(total){this.stop();this.total=total;this.remaining=total;this.onTick(this);this.resume();}
+  resume(){if(this.running||this.remaining<=0)return;this.running=true;this.last=performance.now();this.id=setInterval(()=>this.step(),100);}
+  pause(){this.running=false;clearInterval(this.id);this.id=null;}
+  stop(){this.pause();}
+  step(){const n=performance.now();this.remaining-=(n-this.last)/1000;this.last=n;
+    if(this.remaining<=0){this.remaining=0;this.pause();this.onTick(this);this.onEnd(this);return;} this.onTick(this);}
+  add(s){this.remaining+=s;this.total+=s;this.onTick(this);}
+}
+const studyTimer=new Timer(t=>{$("#studyTime").textContent=fmt(t.remaining);},()=>{
+  $("#studyTimer").classList.add("over");$("#studyTime").textContent="Time";$("#studyToggle").textContent="Done";$("#studyToggle").disabled=true;
+  $("#toSpeak").classList.add("pulse"); chime(); toast(M().studyWord+" time is up.");
+});
+function startStudy(){
+  $("#studyTimer").classList.remove("over"); $("#studyToggle").disabled=false; $("#studyToggle").textContent="Pause";
+  $("#studyTimer").hidden=false; studyTimer.start(S().study); holdAwake();
+}
+function stopAllTimers(){studyTimer.stop();speakTimer.stop();hideCountdown();releaseAwake();}
+$("#studyToggle").addEventListener("click",()=>{
+  if(studyTimer.running){studyTimer.pause();$("#studyToggle").textContent="Resume";}
+  else{studyTimer.resume();$("#studyToggle").textContent="Pause";}
+});
+$("#studyAdd").addEventListener("click",()=>{
+  if(studyTimer.remaining<=0){studyTimer.remaining=0;studyTimer.total=0;$("#studyTimer").classList.remove("over");$("#studyToggle").disabled=false;$("#toSpeak").classList.remove("pulse");}
+  studyTimer.add(30); studyTimer.resume(); $("#studyToggle").textContent="Pause";
+});
+
+/* speaking */
+const C=2*Math.PI*88; const ring=$("#ringFg"); ring.style.strokeDasharray=C;
+const bar=$("#phaseBar");
+let phases=FW.PREP.phases, bounds=[], curPhase=-1;
+function setupPhases(fw){
+  phases=FW[fw].phases; bar.innerHTML=""; let s=0; bounds=phases.map(p=>{const a=s;s+=p.f;return [a,s];});
+  phases.forEach(p=>{const d=el("div","seg");d.style.setProperty("--g",p.f);d.style.setProperty("--c","var("+p.c+")");
+    const tr=el("div","track");tr.appendChild(el("div","fill"));d.append(tr,el("span","tag",p.k+" · "+p.name.toUpperCase()));bar.appendChild(d);});
+}
+function setPhase(i){
+  curPhase=i; const p=phases[i];
+  $("#cue").style.setProperty("--c","var("+p.c+")"); $("#cueL").textContent=p.k; $("#cueName").textContent=p.name;
+  $("#cueText").textContent=p.cue; const cur=S().current; $("#cueStart").textContent=(x.guide&&cur)?"Try: "+GUIDE[cur.fw].parts[i].starters.join("  ·  "):""; const n=$("#n"+i); const note=(x.planner&&n)?n.value.trim():""; $("#cueNote").textContent=note?"Your note: "+note:"";
+  $("#phaseLbl").textContent=p.name; ring.style.stroke="var("+p.c+")";
+  [...bar.children].forEach((s,j)=>s.classList.toggle("active",j===i));
+}
+const speakTimer=new Timer(t=>{
+  const frac=t.total?Math.min(1,(t.total-t.remaining)/t.total):0;
+  $("#timeBig").textContent=fmt(t.remaining); ring.style.strokeDashoffset=C*frac;
+  let i=bounds.findIndex(([a,b])=>frac<b); if(i<0) i=phases.length-1;
+  if(i!==curPhase){ if(curPhase>=0&&t.running) phaseBeep(); setPhase(i); }
+  [...bar.children].forEach((s,j)=>{const [a,b]=bounds[j];const f=Math.max(0,Math.min(1,(frac-a)/(b-a)));s.querySelector(".fill").style.width=(f*100)+"%";});
+},()=>{endGong();finishSpeak();});
+let cdTimer=null;
+function hideCountdown(){clearInterval(cdTimer);cdTimer=null;$("#countdown").hidden=true;}
+function goSpeak(){
+  const t=S().current; if(!t) return;
+  audio(); studyTimer.stop(); hideCountdown(); speakTimer.stop();
+  setupPhases(t.fw);
+  const secs=S().speak;
+  $("#kTitle").textContent=t.n; curPhase=-1; speakTimer.total=secs; speakTimer.remaining=secs; speakTimer.onTick(speakTimer);
+  $("#speakPause").textContent="Pause";
+  hideCards(); $("#speakCard").hidden=false; holdAwake();
+  let n=3; $("#cdN").textContent=n; $("#countdown").hidden=false; tone(520,.12,"triangle",.1);
+  cdTimer=setInterval(()=>{n--; if(n>0){$("#cdN").textContent=n;tone(520,.12,"triangle",.1);} else {hideCountdown();tone(880,.25,"triangle",.14);speakTimer.start(secs);}},1000);
+}
+function finishSpeak(){
+  speakTimer.stop(); hideCountdown(); releaseAwake();
+  $("#dTitle").textContent=S().current?S().current.n:"";
+  document.querySelectorAll("#checklist input").forEach(i=>{i.checked=false;}); updateScore();
+  hideCards(); $("#doneCard").hidden=false; applyExtras();
+}
+$("#toSpeak").addEventListener("click",goSpeak);
+$("#angleNew").addEventListener("click",newAngle);
+$("#speakPause").addEventListener("click",()=>{
+  if(cdTimer) return;
+  if(speakTimer.running){speakTimer.pause();$("#speakPause").textContent="Resume";}
+  else{speakTimer.resume();$("#speakPause").textContent="Pause";}
+});
+$("#speakRestart").addEventListener("click",goSpeak);
+$("#speakFinish").addEventListener("click",finishSpeak);
+function updateScore(){const all=[...document.querySelectorAll("#checklist input")];$("#score").textContent=all.filter(i=>i.checked).length+" of "+all.length;}
+$("#checklist").addEventListener("change",updateScore);
+$("#doneSpin").addEventListener("click",spin);
+$("#doneRetry").addEventListener("click",goSpeak);
+$("#donePlan").addEventListener("click",()=>{hideCards();$("#resultCard").hidden=false;$("#studyTimer").hidden=true;});
+
+/* extras */
+function applyExtras(){
+  document.querySelectorAll(".sw[data-x]").forEach(i=>{i.checked=x[i.dataset.x];});
+  const selfIn=document.querySelector('.sw[data-x="selfcheck"]'); selfIn.disabled=!x.speak; $("#optSelf").classList.toggle("off-dep",!x.speak);
+  $("#studySel").hidden=!x.study; $("#speakSel").hidden=!x.speak;
+  $("#studySel").value=String(S().study); $("#speakSel").value=String(S().speak);
+  $("#xSummary").hidden=!x.summary; $("#xAngle").hidden=!x.angle||mode==="interview"; $("#xPlanner").hidden=!x.planner; $("#xGuide").hidden=!x.guide;
+  $("#angleLbl").textContent=mode==="vocab"?"Speaking challenge":"Your angle";
+  $("#angleNew").textContent=mode==="vocab"?"New challenge":"New angle";
+  $("#xSpeakBtn").hidden=!x.speak; $("#toSpeak").textContent=M().speakVerb+" ("+fmt(S().speak)+")";
+  $("#studyLbl").textContent=M().studyWord;
+  if(!x.study){$("#studyTimer").hidden=true;studyTimer.stop();}
+  if(!x.speak&&!$("#speakCard").hidden){speakTimer.stop();hideCountdown();hideCards();$("#resultCard").hidden=!S().current;}
+  const self=x.selfcheck&&x.speak; $("#xSelf").hidden=!self; $("#xSelf").style.display=self?"flex":"none";
+  $("#doneRetry").textContent=mode==="interview"?"Answer this again":"Go again on this";
+  $("#diffBox").hidden=!x.difficulty; $("#rDiff").hidden=!x.difficulty;
+  $("#areasBox").hidden=!x.areas; $("#bank").hidden=!x.bank; $("#fsBtn").hidden=!(x.fullscreen&&document.fullscreenEnabled);
+  const on=X_KEYS.filter(k=>x[k]).length; $("#extrasCount").textContent=on+" on"; $("#extrasCount").hidden=!on;
+  updatePoolLine();
+}
+document.querySelectorAll(".sw[data-x]").forEach(i=>i.addEventListener("change",()=>{
+  const k=i.dataset.x, prevAreas=x.areas; x[k]=i.checked; store.set("extras2",x);
+  if(k==="sound"&&x.sound){audio();tone(880,.12);}
+  if(k==="study"&&x.study&&S().current&&!$("#resultCard").hidden){startStudy();}
+  applyExtras();
+  if((k==="areas"&&prevAreas!==x.areas||k==="difficulty"&&diff!=="all")&&!spinning){MODE_KEYS.forEach(m=>{ms[m].strip=[];});buildStrip();hideCards();S().current=null;}
+  if(k==="bank"&&x.bank) buildBank();
+}));
+$("#xAllOff").addEventListener("click",()=>{const was=x.areas||(x.difficulty&&diff!=="all");X_KEYS.forEach(k=>{x[k]=false;});store.set("extras2",x);applyExtras();if(was&&!spinning){MODE_KEYS.forEach(m=>{ms[m].strip=[];});buildStrip();}});
+function toggleExtras(open){$("#extras").hidden=!open;$("#extrasBtn").setAttribute("aria-expanded",open);}
+$("#extrasBtn").addEventListener("click",()=>toggleExtras($("#extras").hidden));
+$("#xClose").addEventListener("click",()=>{toggleExtras(false);$("#extrasBtn").focus();});
+function saveDur(){store.set("dur:"+mode,{study:S().study,speak:S().speak});}
+$("#studySel").addEventListener("change",e=>{S().study=+e.target.value;saveDur();});
+$("#speakSel").addEventListener("change",e=>{S().speak=+e.target.value;saveDur();applyExtras();});
+
+function renderChips(){
+  const box=$("#chips"); box.innerHTML=""; const cats=M().cats;
+  Object.keys(cats).forEach(k=>{const b=el("button","chip");b.type="button";b.setAttribute("aria-pressed",S().cats.has(k));
+    const n=M().items.filter(t=>t.c===k).length; b.append(el("span",null,cats[k]),el("span","n",String(n)));
+    b.addEventListener("click",()=>{const c=S().cats;c.has(k)?c.delete(k):c.add(k);catsChanged();});box.appendChild(b);});
+}
+function catsChanged(){store.set("cats:"+mode,[...S().cats]);renderChips();updatePoolLine();if(!spinning)buildStrip();}
+$("#catAll").addEventListener("click",()=>{S().cats=new Set(Object.keys(M().cats));catsChanged();});
+$("#catNone").addEventListener("click",()=>{S().cats=new Set();catsChanged();});
+
+/* tabs */
+function renderTabs(){
+  const nav=$("#tabs"); nav.innerHTML="";
+  MODE_KEYS.forEach(m=>{const b=el("button","tab");b.type="button";b.setAttribute("role","tab");b.id="tab-"+m;
+    b.setAttribute("aria-selected",m===mode);b.tabIndex=m===mode?0:-1;b.setAttribute("aria-controls","reel");
+    b.append(el("span",null,MODES[m].label),el("span","n",MODES[m].items.length+" "+MODES[m].unit[1].split(" ").pop()));
+    b.addEventListener("click",()=>switchMode(m)); nav.appendChild(b);});
+}
+$("#tabs").addEventListener("keydown",e=>{
+  if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft") return;
+  const i=MODE_KEYS.indexOf(mode), n=MODE_KEYS[(i+(e.key==="ArrowRight"?1:-1)+MODE_KEYS.length)%MODE_KEYS.length];
+  switchMode(n); const t=$("#tab-"+n); t&&t.focus();
+});
+function switchMode(m){
+  if(spinning||m===mode) return;
+  stopAllTimers(); mode=m; store.set("mode",m);
+  renderTabs(); reel.setAttribute("aria-label","Spin for a random "+M().unit[0]);
+  $("#bankTitle").textContent=M().bank; $("#bankCount").textContent=M().items.length+" "+M().unit[1];
+  $("#bankSearch").value=""; bankBuilt=false; if(x.bank&&$("#bank").open) buildBank(); else $("#bankGroups").innerHTML="";
+  renderChips();
+  if(!S().strip.length) buildStrip(); else {reel.classList.toggle("won",S().won); render();}
+  hideCards();
+  if(S().current&&S().won){showItemQuiet(S().current);}
+  applyExtras();
+}
+function showItemQuiet(t){
+  $("#rLabel").textContent=M().noun; $("#rTitle").textContent=t.n; setDiffPill(t);
+  const core=$("#rCore"); core.innerHTML="";
+  if(mode==="vocab"){core.appendChild(el("span","pos",t.pos));core.append(t.b);core.hidden=false;} else core.hidden=true;
+  renderSummary(t); renderGuide(t); renderPlanner(t); renderChecklist(t); newAngle();
+  $("#studyTimer").hidden=true; $("#resultCard").hidden=false;
+}
+
+const fsBtn=$("#fsBtn");
+fsBtn.addEventListener("click",()=>{try{if(document.fullscreenElement){document.exitFullscreen().catch(()=>{});}else{document.documentElement.requestFullscreen().catch(()=>toast("Full screen isn't available here."));}}catch(e){toast("Full screen isn't available here.");}});
+document.addEventListener("fullscreenchange",()=>{fsBtn.textContent=document.fullscreenElement?"Exit full screen":"Full screen";});
+
+$("#spinBtn").addEventListener("click",spin);
+reel.addEventListener("click",spin);
+reel.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();spin();}});
+document.addEventListener("keydown",e=>{
+  if(e.code!=="Space"&&e.key!==" ") return;
+  const tag=(e.target.tagName||"").toLowerCase();
+  if(["input","textarea","select","button","a","summary"].includes(tag)) return;
+  if(!$("#speakCard").hidden) return;
+  e.preventDefault(); spin();
+});
+
+/* bank */
+let bankBuilt=false;
+function buildBank(){
+  const q=$("#bankSearch").value.trim().toLowerCase(); const box=$("#bankGroups"); box.innerHTML=""; let shown=0;
+  const cats=M().cats;
+  Object.keys(cats).forEach(k=>{
+    const list=M().items.filter(t=>t.c===k&&(!q||[t.n,t.b||"",t.tip||"",t.search||""].join(" ").toLowerCase().includes(q)));
+    if(!list.length) return; shown+=list.length;
+    const g=el("div","bank-group"); g.appendChild(el("h3",null,cats[k]+" · "+list.length));
+    const ul=el("ul");
+    list.slice().sort((a,b)=>a.n.localeCompare(b.n)).forEach(t=>{const li=el("li");const b=el("button");b.type="button";b.dataset.id=t.id;b.title=t.b||t.tip||"";
+      b.append(el("span",null,t.n),el("span","u",used.has(t.id)?"drawn":""));b.addEventListener("click",()=>pickDirect(t));li.appendChild(b);ul.appendChild(li);});
+    g.appendChild(ul);box.appendChild(g);
+  });
+  if(!shown) box.appendChild(el("p","empty","Nothing matches that search."));
+  bankBuilt=true;
+}
+function markBank(){if(!bankBuilt)return;document.querySelectorAll("#bankGroups button[data-id]").forEach(b=>{b.querySelector(".u").textContent=used.has(b.dataset.id)?"drawn":"";});}
+$("#bank").addEventListener("toggle",()=>{if($("#bank").open&&!bankBuilt)buildBank();});
+$("#bankSearch").addEventListener("input",buildBank);
+
+new ResizeObserver(measure).observe(reel);
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&(studyTimer.running||speakTimer.running))holdAwake();});
+renderTabs(); renderChips();
+$("#bankTitle").textContent=M().bank; $("#bankCount").textContent=M().items.length+" "+M().unit[1];
+reel.setAttribute("aria-label","Spin for a random "+M().unit[0]);
+setupPhases("PREP"); renderDiff(); applyExtras(); buildStrip(); measure();
+
+</script>
+</body>
+</html>
